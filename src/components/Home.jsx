@@ -7,18 +7,19 @@ import CurrentWeather from '../components/CurrentWeather'
 import { setCurrentWeather } from '../redux/weather/weather.actions'
 
 const key = 'Axm4PexJcrUlxTvofnN4KcAtab4G8e9j'
+const imageKey = 'B-mP5PL-pvY6MQkR01mSJMkvUnyJIl7_LcuYPOX42_s'
 
 
 function Home() {
-    const [fiveDays, setFiveDays] = useState(null)
-    const getWeather = async (locationID) => {
+    const [image, setImage] = useState('')
+    const getWeather = async (locationID, locationName) => {
         const base = 'http://dataservice.accuweather.com/currentconditions/v1/'
         const query = `${locationID}?apikey=${key}`
 
         const response = await fetch(base + query)
         const data = await response.json()
 
-        console.log(data)
+        console.log(data, locationName)
 
     }
 
@@ -29,12 +30,34 @@ function Home() {
         const response = await fetch(base + query)
         const data = await response.json()
 
-        console.log(data)
+        const fullResponse = {
+            key :data[0].Key, 
+            cityName: data[0].LocalizedName
+        }
+
+        return fullResponse
 
     }
 
-    useEffect(() => {
+    const getCityImage = async (cityName) => {
+        const base = `https://api.unsplash.com/photos/?query=${cityName}&client_id=${imageKey}`
+        
+        const response = await fetch(base)
+        const data = await response.json()
+        console.log(data)
+        setImage(data[0].urls.raw)
+    }
 
+    const getWeatherByCity = async (city) => {
+        const cityToSearch = await getCity(city)
+        await getWeather(cityToSearch.key, cityToSearch.name)
+        
+    }
+
+    useEffect(() => {
+        getCityImage('new york')
+        // getCity("Tel Aviv")
+        // getWeather('215854')
 
     }, [])
 
@@ -47,6 +70,7 @@ function Home() {
             <Layout >
                 <CurrentWeather />
                 <FiveDays />
+                <img src={image} />
             </Layout>
         </>
     )

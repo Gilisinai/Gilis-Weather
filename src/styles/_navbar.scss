@@ -1,0 +1,26 @@
+.navbar {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    min-height: 10rem;
+    background-image: $primaryBG;
+
+    &__menu {
+        display: flex;
+
+        &-item {
+            min-width: 15%;
+
+            & a {
+                text-decoration: none;
+                color: $text-color-light
+            }
+        }
+
+        &.container {
+            margin-top: unset;
+        }
+    }
+}

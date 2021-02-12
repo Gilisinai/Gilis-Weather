@@ -1,4 +1,4 @@
-[
+const currentCityResponse = [
     {
         "Version": 1,
         "Key": "215854",
@@ -59,3 +59,5 @@
         ]
     }
 ]
+
+export default currentCityResponse

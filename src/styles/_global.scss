@@ -1,0 +1,74 @@
+* {
+    margin: 0;
+    padding: 0;
+  }
+  
+  *,
+  *::after,
+  *::before {
+    box-sizing: border-box;
+  }
+  
+  html {
+    // This defines what 1rem is
+    font-size: 62.5%; //1 rem = 10px; 10px/16px = 62.5%
+  
+    @include respond(laptops) {
+      font-size: 45.25%;
+    }
+  
+    @include respond(lg) {
+      // width < 1024px ?
+      font-size: 56.25%; // 1rem = 9px, 9/16 = 56.25
+    }
+  
+    @include respond(md) {
+      // width < 992px ?
+      font-size: 50%; // 1rem = 8px, 8/16 = 50
+    }
+  }
+  
+  body {
+    box-sizing: border-box;
+    line-height: 1.2;
+    // font-family: sans-serif;
+    font-weight: $fw-regular;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    text-rendering: optimizeLegibility;
+    overflow-x: hidden;
+    height: unset !important;
+  }
+
+  .container {
+      max-width: 1440px;
+      width: 90%;
+      margin: 0 auto;
+      margin-top: 10rem;
+  }
+  
+  img {
+    width: 100%;
+    max-width: 100%;
+    height: auto;
+  }
+
+%fs-handler {
+
+    & *[class*="-p--1"] {
+        @extend %para-1-fs;
+      }
+    
+      & *[class*="-p--2"] {
+        @extend %para-2-fs;
+      }
+
+    
+    
+}
+
+div,
+section,
+article {
+  @extend %fs-handler;
+}

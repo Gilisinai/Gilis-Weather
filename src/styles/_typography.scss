@@ -1,0 +1,47 @@
+%para-1-fs {
+    font-size: $dsk-article-paragraph-1;
+  
+    @include respond(laptops) {
+      font-size: $lap-article-paragraph-1;
+    }
+  
+    @include respond(xl) {
+      font-size: $xl-article-paragraph-1;
+    }
+  
+    @include respond(lg) {
+      font-size: $ipro-article-paragraph-1;
+    }
+  
+    @include respond(md) {
+      font-size: $ip-article-paragraph-1;
+    }
+  
+    @include respond(xs) {
+      font-size: $mob-article-paragraph-1;
+    }
+  }
+  
+  %para-2-fs {
+    font-size: $dsk-article-paragraph-2;
+  
+    @include respond(laptops) {
+      font-size: $lap-article-paragraph-2;
+    }
+  
+    @include respond(xl) {
+      font-size: $xl-article-paragraph-2;
+    }
+  
+    @include respond(lg) {
+      font-size: $ipro-article-paragraph-2;
+    }
+  
+    @include respond(md) {
+      font-size: $ip-article-paragraph-2;
+    }
+  
+    @include respond(xs) {
+      font-size: $mob-article-paragraph-2;
+    }
+  }

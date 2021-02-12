@@ -1,0 +1,15 @@
+.forecast {
+    display: flex;
+    width: 100%;
+    justify-content: space-evenly;
+    border: 1px solid #000;
+    margin-top: 2rem;
+    padding: 2rem;
+
+    &__card {
+        width: 15%;
+        border: 1px solid red;
+        padding: 1rem;
+
+    }
+}

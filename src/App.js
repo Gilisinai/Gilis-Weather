@@ -5,7 +5,7 @@ import theme from './components/ui/Theme'
 import Home from './components/Home'
 import Header from './components/ui/Header'
 import Favourites from './components/Favourites';
-import './App.css';
+import './App.scss';
 
 function App() {
   return (

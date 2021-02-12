@@ -13,7 +13,7 @@ function FiveDays({ setFiveDayForecast ,fiveDayForecast }) {
 
 
     return (
-        <div>
+        <div class="forecast">
             {fiveDayForecast && fiveDayForecast.map((day, index) => (
                 <DayCard key={index} data={day} />
             ))}

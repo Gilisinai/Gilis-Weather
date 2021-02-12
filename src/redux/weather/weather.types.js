@@ -1,0 +1,4 @@
+export const WeatherActionTypes = {
+    SET_CURRENT_WEATHER: 'SET_CURRENT_WEATHER',
+    SET_FIVE_DAY_FORECAST: 'SET_FIVE_DAY_FORECAST'
+}

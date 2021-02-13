@@ -10,6 +10,7 @@ import WeatherIcon from './WeatherIcon'
 function CurrentWeather({ setCurrentWeather, addCityToFavorites, currentWeather }) {
 
     useEffect(() => {
+        console.log(currentWeatherResponse[0])
         setCurrentWeather(currentWeatherResponse[0])
     }, [])
 
@@ -34,7 +35,7 @@ function CurrentWeather({ setCurrentWeather, addCityToFavorites, currentWeather 
                     <div className="current__weather-utils--icon">
                         current location
                     </div>
-                    <div onClick={()=> addCityToFavorites(currentCityResponse[0])} className="current__weather-utils--icon">
+                    <div onClick={()=> addCityToFavorites(currentWeatherResponse[0])} className="current__weather-utils--icon">
                         add to favorites
                     </div>
 

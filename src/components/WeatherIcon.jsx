@@ -1,11 +1,11 @@
 import React from 'react'
 
-function WeatherIcon({iconCode, iconText}) {
+function WeatherIcon({iconCode}) {
 
     return (
         <img 
             src={`https://developer.accuweather.com/sites/default/files/${iconCode}-s.png`}
-            alt={iconText}
+            alt="weather icon"
         />
     )
 }

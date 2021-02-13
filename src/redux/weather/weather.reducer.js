@@ -2,7 +2,8 @@ import { WeatherActionTypes } from './weather.types'
 
 const initialState = {
     currentWeather: null,
-    fiveDayForecast: null
+    fiveDayForecast: null,
+    autoComplete: []
 }
 
 const weatherReducer = (state = initialState, action) => {

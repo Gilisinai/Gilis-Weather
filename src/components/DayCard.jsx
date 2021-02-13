@@ -7,7 +7,7 @@ function DayCard({data}) {
     return (
         <div class="forecast__card"> 
             <div className="forecast__card-item">
-                <WeatherIcon iconCode={21} iconText={Day.IconPhrase} />
+                <WeatherIcon iconCode={21}  />
             </div>
             <div className="forecast__card-item">
                 <h1> {dayjs(Date).format('ddd')} </h1>

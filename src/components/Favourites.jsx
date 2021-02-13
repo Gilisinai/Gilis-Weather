@@ -1,18 +1,24 @@
 import React, { useEffect } from 'react'
-import DayCard from './DayCard'
+import FavouriteCard from './FavouriteCard'
 import Layout from './ui/Layout'
+import SideView from './ui/SideView'
 import { connect } from 'react-redux'
 
 function Favourites({ favorites }) {
 
     useEffect(() => {
         console.log(favorites)
-    },[])
+    }, [])
     return (
         <Layout>
-            {favorites.map((day, index) => (
-                <DayCard key={index} data={day} />
-            ))}
+            <SideView>
+
+                {favorites.length === 0 ? <div>no favourites yet</div> : 
+                     favorites.map((day, index) => (
+                         
+                         <FavouriteCard key={day.Key} data={day} />
+                     ))}
+            </SideView>
         </Layout>
     )
 }

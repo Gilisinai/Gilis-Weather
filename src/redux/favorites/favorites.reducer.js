@@ -10,7 +10,6 @@ const favoritesReducer = (state = initialState, action) => {
         case FavoritesActionTypes.ADD_CITY_TO_FAVORITES:
             return {
                 ...state,
-                // favorites: [...state.favorites, action.payload]
                 favorites: addCityTofavorites(state.favorites, action.payload)
             }
         default:

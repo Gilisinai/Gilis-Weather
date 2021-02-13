@@ -10,3 +10,8 @@ export const setFiveDayForecast = fiveDayForecast => ({
     type: WeatherActionTypes.SET_FIVE_DAY_FORECAST,
     payload: fiveDayForecast
 })
+
+// export const setAutocomplete = input => ({
+//     type: WeatherActionTypes.SET_AUTOCOMPLETE,
+//     payload: 
+// })

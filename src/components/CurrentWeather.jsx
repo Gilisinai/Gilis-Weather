@@ -3,15 +3,13 @@ import { connect } from 'react-redux'
 import { setCurrentWeather , fetchCurrentWeatherStartAsync } from '../redux/weather/weather.actions'
 import { addCityToFavorites } from '../redux/favorites/favorites.actions'
 
-import currentWeatherResponse from '../responses/currentWeatherResponse'
 
 
-function CurrentWeather({ setCurrentWeather, addCityToFavorites, currentWeather, fetchCurrentWeatherStartAsync }) {
+function CurrentWeather({ addCityToFavorites, currentWeather, fetchCurrentWeatherStartAsync }) {
 
     useEffect(() => {
-        console.log(currentWeatherResponse[0])
         // setCurrentWeather(currentWeatherResponse[0])
-        fetchCurrentWeatherStartAsync()
+        fetchCurrentWeatherStartAsync('tel aviv')
     }, [])
 
     return (
@@ -22,7 +20,7 @@ function CurrentWeather({ setCurrentWeather, addCityToFavorites, currentWeather,
                 <div className="current__weather-details">
                     <div>
                         <h1 className="current-p--1">
-                            Tel Aviv
+                        {currentWeather && currentWeather.LocalizedName}
                         </h1>
                         <div className="current-p--2">
                         {currentWeather && currentWeather.Temperature.Metric.Value} C
@@ -35,7 +33,7 @@ function CurrentWeather({ setCurrentWeather, addCityToFavorites, currentWeather,
                     <div className="current__weather-utils--icon">
                         current location
                     </div>
-                    <div onClick={()=> addCityToFavorites(currentWeatherResponse[0])} className="current__weather-utils--icon">
+                    <div onClick={()=> addCityToFavorites(currentWeather)} className="current__weather-utils--icon">
                         add to favorites
                     </div>
 
@@ -55,7 +53,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch => ({
     setCurrentWeather: currentWeather => dispatch(setCurrentWeather(currentWeather)),
     addCityToFavorites: city => dispatch(addCityToFavorites(city)),
-    fetchCurrentWeatherStartAsync: () => dispatch(fetchCurrentWeatherStartAsync())
+    fetchCurrentWeatherStartAsync: city => dispatch(fetchCurrentWeatherStartAsync(city))
 })
 
 

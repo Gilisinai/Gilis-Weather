@@ -1,13 +1,12 @@
-import React, { useState, useEffect } from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { setFiveDayForecast } from '../redux/weather/weather.actions'
+import { setFiveDayForecast, fetchForecastStartAsync } from '../redux/weather/weather.actions'
 import DayCard from '../components/DayCard'
-import forecast from '../responses/forcastResponse'
 
-function FiveDays({ setFiveDayForecast ,fiveDayForecast }) {
+function FiveDays({ fiveDayForecast, cityKey , fetchForecastStartAsync}) {
 
     useEffect(() => {
-        setFiveDayForecast(forecast.DailyForecasts)
+        fetchForecastStartAsync(cityKey)
 
     }, [])
 
@@ -22,11 +21,13 @@ function FiveDays({ setFiveDayForecast ,fiveDayForecast }) {
 }
 
 const mapStateToProps = state => ({
-    fiveDayForecast: state.weather.fiveDayForecast
+    fiveDayForecast: state.weather.fiveDayForecast,
+    cityKey: state.weather.cityKey
 })
 
 const mapDispatchToProps = dispatch => ({
-    setFiveDayForecast: fiveDayForecast => dispatch(setFiveDayForecast(fiveDayForecast))
+    setFiveDayForecast: fiveDayForecast => dispatch(setFiveDayForecast(fiveDayForecast)),
+    fetchForecastStartAsync: (locationKey) => dispatch(fetchForecastStartAsync(locationKey))
 })
 
 export default connect(mapStateToProps, mapDispatchToProps)(FiveDays)

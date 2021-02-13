@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useEffect } from 'react';
 import { connect } from 'react-redux'
 import Layout from './ui/Layout'
 import SideView from './ui/SideView'
@@ -7,43 +7,9 @@ import CurrentWeather from '../components/CurrentWeather'
 import CurrentTemperature from '../components/CurrentTemperature'
 import CitySearch from '../components/CitySearch'
 
-import { setCurrentWeather } from '../redux/weather/weather.actions'
 
-const key = 'Axm4PexJcrUlxTvofnN4KcAtab4G8e9j'
-// const imageKey = 'B-mP5PL-pvY6MQkR01mSJMkvUnyJIl7_LcuYPOX42_s'
-
-
-function Home() {
-    const [image, setImage] = useState('')
-    const getWeather = async (cityData) => {
-        const base = 'http://dataservice.accuweather.com/currentconditions/v1/'
-        const query = `${cityData.Key}?apikey=${key}`
-
-        const response = await fetch(base + query)
-        const data = await response.json()
-
-        console.log({...data[0],...cityData})
-
-    }
-
-    const getCity = async (city) => {
-        const base = 'http://dataservice.accuweather.com/locations/v1/cities/search'
-        const query = `?apikey=${key}&q=${city}`
-
-        const response = await fetch(base + query)
-        const data = await response.json()
-
-        return data[0]
-
-    }
-
-
-    const getWeatherByCity = async (city) => {
-        const cityToSearch = await getCity(city)
-        await getWeather(cityToSearch)
-        
-    }
-
+function Home({cityKey}) {
+    
     useEffect(() => {
         // getWeatherByCity('tel aviv')
         
@@ -60,7 +26,8 @@ function Home() {
                 <SideView>
                     <CitySearch />
                     <CurrentWeather />
-                    <FiveDays />
+                   {cityKey && <FiveDays />} 
+                    
                 </SideView>
                 <CurrentTemperature />
             </Layout>
@@ -68,6 +35,8 @@ function Home() {
     )
 }
 
+const mapStateToProps = state => ({
+    cityKey: state.weather.cityKey
+})
 
-
-export default Home
+export default connect(mapStateToProps)(Home)

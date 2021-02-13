@@ -4,7 +4,8 @@ const initialState = {
     cityKey: null,
     currentWeather: null,
     fiveDayForecast: null,
-    isFetching: false,
+    isFetchingCurrent: false,
+    isFetchingForecast: false,
     errorMessage: undefined
 }
 
@@ -28,20 +29,40 @@ const weatherReducer = (state = initialState, action) => {
         case WeatherActionTypes.FETCH_CURRENT_WEATHER_START:
             return {
                 ...state,
-                isFetching: true
+                isFetchingCurrent: true
             }
 
         case WeatherActionTypes.FETCH_CURRENT_WEATHER_SUCCESS:
             return {
                 ...state,
-                isFetching: false,
-                currentWeather: [...action.payload]
+                isFetchingCurrent: false,
+                cityKey: action.payload.Key,
+                currentWeather: action.payload
             }
 
         case WeatherActionTypes.FETCH_CURRENT_WEATHER_FAILURE:
             return {
                 ...state,
-                isFetching: false,
+                isFetchingCurrent: false,
+                errorMessage: action.payload
+            }
+        case WeatherActionTypes.FETCH_FORECAST_START:
+            return {
+                ...state,
+                isFetchingForecast: true
+            }
+
+        case WeatherActionTypes.FETCH_FORECAST_SUCCESS:
+            return {
+                ...state,
+                isFetchingForecast: false,
+                fiveDayForecast: action.payload
+            }
+
+        case WeatherActionTypes.FETCH_FORECAST_FAILURE:
+            return {
+                ...state,
+                isFetchingForecast: false,
                 errorMessage: action.payload
             }
 

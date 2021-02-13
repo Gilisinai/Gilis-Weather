@@ -33,10 +33,15 @@ export const fetchCurrentWeatherFailure = errorMessage => ({
 export const fetchCurrentWeatherStartAsync = () => {
     return async dispatch => {
         dispatch(fetchCurrentWeatherStart())
-        const key = '6DJ8C41pjFwRHbeOWxIIGHQf2b4k44Fl'
+        const key = process.env.REACT_APP_WEATHER_API_KEY
         const cityUrl = `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${key}&q=london`
         const cityRes = await fetch(cityUrl)
-        console.log(cityRes)
+        const cityData = await cityRes.json()
+        const weatherUrl = `http://dataservice.accuweather.com/currentconditions/v1/${cityData[0].Key}?apikey=${key}`
+        const weatherRes = await fetch(weatherUrl)
+        const weatherData = await weatherRes.json()
+
+        dispatch(fetchCurrentWeatherSuccess({...cityData[0], ...weatherData}))
         
 
         

@@ -6,19 +6,19 @@ function DayCard({data}) {
     const {Temperature, Day, Date, LocalizedName} = data
     return (
         <div class="forecast__card"> 
-            <div>
-                {dayjs(Date).format('ddd')}
-            </div>
-            <div>
+            <div className="forecast__card-item">
                 <WeatherIcon iconCode={21} iconText={Day.IconPhrase} />
             </div>
-            <div>
-
-            {Temperature.Maximum.Value}
+            <div className="forecast__card-item">
+                <h1> {dayjs(Date).format('ddd')} </h1>
             </div>
-            <div>
-            {Day.IconPhrase}
-
+            <div className="forecast__card-item forecast__card-item--temp">
+                <p>
+                    {Temperature.Minimum.Value} - {Temperature.Maximum.Value}
+                </p>
+                <p>
+                     {Day.IconPhrase}
+                </p>
             </div>
         </div>
     )

@@ -1,6 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
+import homeIcon from '../../assets/icons/home.svg'
+import heartIcon from '../../assets/icons/heart.svg'
 
 
 
@@ -12,18 +14,15 @@ function Header(props) {
 
 
         <div className="navbar">
-            <div className="navbar__logo">
-                <img src="" alt="logo"/>
-            </div>
-            <div className="container navbar__menu">
+            <div className="navbar__menu">
                 <div class="navbar__menu-item">
                     <Link to="/">
-                        home
+                        <img className="navbar__menu-item--icon" src={homeIcon} alt="home icon"/>
                     </Link>
                 </div>
                 <div class="navbar__menu-item">
                     <Link to="/favorites">
-                        favorites
+                        <img className="navbar__menu-item--icon" src={heartIcon} alt="home icon"/>
                     </Link>
                 </div>
             </div>

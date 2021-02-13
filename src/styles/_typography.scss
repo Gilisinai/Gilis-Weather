@@ -45,3 +45,44 @@
       font-size: $mob-article-paragraph-2;
     }
   }
+
+
+  %headline-1-fs {
+    font-size: $dsk-headline--1;
+  
+    @include respond(laptops) {
+      font-size: $lap-headline--1;
+    }
+  
+    @include respond(xl) {
+      font-size: $xl-headline--1;
+    }
+  
+    @include respond(lg) {
+      font-size: $ipro-headline--1;
+    }
+  
+    @include respond(xs) {
+      font-size: $mob-headline--1;
+    }
+  }
+  
+  %headline-2-fs {
+    font-size: $dsk-headline--2;
+  
+    @include respond(laptops) {
+      font-size: $lap-headline--2;
+    }
+  
+    @include respond(xl) {
+      font-size: $xl-headline--2;
+    }
+  
+    @include respond(lg) {
+      font-size: $ipro-headline--2;
+    }
+  
+    @include respond(xs) {
+      font-size: $mob-headline--2;
+    }
+  }

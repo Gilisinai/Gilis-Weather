@@ -19,14 +19,10 @@ function CurrentWeather({ setCurrentWeather, addCityToFavorites, currentWeather 
         <section className="current">
             <div className="current__weather">
                 <div className="current__weather-details">
-                    <div className="current__weather-icon">
-                        <WeatherIcon iconCode={17} iconText="beautiful" />
-                    </div>
                     <div>
-
-                        <div className="current-p--1">
+                        <h1 className="current-p--1">
                             Tel Aviv
-                        </div>
+                        </h1>
                         <div className="current-p--2">
                         {currentWeather && currentWeather.Temperature.Metric.Value} C
                         </div>

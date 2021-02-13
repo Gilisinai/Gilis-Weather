@@ -1,15 +1,31 @@
 .forecast {
     display: flex;
+    flex-direction: column;
     width: 100%;
+    min-height: 60%;
     justify-content: space-evenly;
-    border: 1px solid #000;
     margin-top: 2rem;
-    padding: 2rem;
+    max-width: 50%;
+    margin: 0 auto;
 
     &__card {
-        width: 15%;
-        border: 1px solid red;
-        padding: 1rem;
+        width: 100%;
+        margin-bottom: 2rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        color: $text-color-light;
+
+        &-item {
+            width: 33%;
+            display: flex;
+            justify-content: center;
+
+            &--temp {
+                display: flex;
+                flex-direction: column;
+            }
+        }
 
     }
 }

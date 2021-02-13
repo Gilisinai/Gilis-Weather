@@ -1,16 +1,17 @@
 .current {
-    padding-top: 2rem;
+    max-width: 80%;
+    margin: 0 auto;
+    margin-bottom: 4rem;
 
     &__weather {
         display: flex;
         width: 100%;
-        border: 1px solid #000;
-        padding: 2rem;
         align-items: center;
         justify-content: space-between;
         
         &-details {
             display: flex;
+            color: $text-color-light;
         }
 
         &-icon {
@@ -27,4 +28,6 @@
             }
         }
     }
+
+    
 }

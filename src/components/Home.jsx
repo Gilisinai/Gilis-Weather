@@ -1,9 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import { connect } from 'react-redux'
 import Layout from './ui/Layout'
+import SideView from './ui/SideView'
 import forecast from '../responses/forcastResponse'
 import FiveDays from '../components/FiveDays'
 import CurrentWeather from '../components/CurrentWeather'
+import CurrentTemperature from '../components/CurrentTemperature'
+
 import { setCurrentWeather } from '../redux/weather/weather.actions'
 
 const key = 'Axm4PexJcrUlxTvofnN4KcAtab4G8e9j'
@@ -68,9 +71,11 @@ function Home() {
 
             {/* <Button variant="contained">get city</Button> */}
             <Layout >
-                <CurrentWeather />
-                <FiveDays />
-                <img src={image} />
+                <SideView>
+                    <CurrentWeather />
+                    <FiveDays />
+                </SideView>
+                <CurrentTemperature />
             </Layout>
         </>
     )

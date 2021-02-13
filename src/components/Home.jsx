@@ -6,13 +6,14 @@ import FiveDays from '../components/FiveDays'
 import CurrentWeather from '../components/CurrentWeather'
 import CurrentTemperature from '../components/CurrentTemperature'
 import CitySearch from '../components/CitySearch'
+import { fetchCurrentWeatherStartAsync } from '../redux/weather/weather.actions'
+
 
 
 function Home({cityKey}) {
     
     useEffect(() => {
         // getWeatherByCity('tel aviv')
-        
 
     }, [])
 
@@ -29,7 +30,7 @@ function Home({cityKey}) {
                    {cityKey && <FiveDays />} 
                     
                 </SideView>
-                <CurrentTemperature />
+                {cityKey && <CurrentTemperature />}
             </Layout>
         </>
     )
@@ -37,6 +38,10 @@ function Home({cityKey}) {
 
 const mapStateToProps = state => ({
     cityKey: state.weather.cityKey
+})
+
+const mapDispatchToProps = dispatch => ({
+    fetchCurrentWeatherStartAsync: city => dispatch(fetchCurrentWeatherStartAsync(city))
 })
 
 export default connect(mapStateToProps)(Home)

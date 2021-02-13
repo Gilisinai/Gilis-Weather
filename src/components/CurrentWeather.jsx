@@ -3,13 +3,14 @@ import { connect } from 'react-redux'
 import { setCurrentWeather , fetchCurrentWeatherStartAsync } from '../redux/weather/weather.actions'
 import { addCityToFavorites } from '../redux/favorites/favorites.actions'
 
+import dayjs from 'dayjs'
 
 
 function CurrentWeather({ addCityToFavorites, currentWeather, fetchCurrentWeatherStartAsync }) {
 
     useEffect(() => {
-        // setCurrentWeather(currentWeatherResponse[0])
-        fetchCurrentWeatherStartAsync('tel aviv')
+        
+        fetchCurrentWeatherStartAsync()
     }, [])
 
     return (
@@ -19,20 +20,17 @@ function CurrentWeather({ addCityToFavorites, currentWeather, fetchCurrentWeathe
             <div className="current__weather">
                 <div className="current__weather-details">
                     <div>
-                        <h1 className="current-p--1">
+                        <h1 className="current-h--1">
                         {currentWeather && currentWeather.LocalizedName}
                         </h1>
-                        <div className="current-p--2">
-                        {currentWeather && currentWeather.Temperature.Metric.Value} C
+                        <div className="current-h--2">
+                        {currentWeather && dayjs(currentWeather.LocalObservationDateTime).format('MMMM D, YYYY h:mm A')}
                         </div>
                     </div>
 
                 </div>
 
                 <div className="current__weather-utils">
-                    <div className="current__weather-utils--icon">
-                        current location
-                    </div>
                     <div onClick={()=> addCityToFavorites(currentWeather)} className="current__weather-utils--icon">
                         add to favorites
                     </div>

@@ -1,0 +1,38 @@
+.toggler {
+    position: relative;
+}
+
+input[type="checkbox"] {
+    position: relative;
+    width: 8rem;
+    height: 4rem;
+    appearance: none;
+    background: #c6c6c6;
+    outline: none;
+    border-radius: 2rem;
+    box-shadow: inset 0 0 5px rgba(0,0,0,.2);
+    transition: $transition-time;
+}
+
+input:checked[type="checkbox"] {
+    background: #03a9f4;
+}
+
+input[type="checkbox"]:before {
+    content: '';
+    position: absolute;
+    width: 4rem;
+    height: 4rem;
+    border-radius: 50%;
+    top: 0;
+    left: 0;
+    background: #fff;
+    transition: $transition-time;
+    box-shadow: 0 2px 5px rgba(0,0,0,.2);
+    transform: scale(1.1);
+}
+
+input:checked[type="checkbox"]:before {
+   left: 4rem;
+    
+}

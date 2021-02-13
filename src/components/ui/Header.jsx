@@ -1,13 +1,13 @@
 import React, { useState, useEffect } from 'react'
 import { Link } from 'react-router-dom'
 import { withRouter } from 'react-router-dom'
-import homeIcon from '../../assets/icons/home.svg'
-import heartIcon from '../../assets/icons/heart.svg'
+import  { ReactComponent as HomeIcon } from '../../assets/icons/home.svg'
+import  { ReactComponent as HeartIcon } from '../../assets/icons/heart.svg'
+import Toggler from './Toggler'
 
 
 
-
-function Header(props) {
+function Header() {
 
 
     return (
@@ -17,13 +17,19 @@ function Header(props) {
             <div className="navbar__menu">
                 <div className="navbar__menu-item">
                     <Link to="/">
-                        <img className="navbar__menu-item--icon" src={homeIcon} alt="home icon"/>
+                        <HomeIcon className="navbar__menuitem--icon"/>
+                        
                     </Link>
                 </div>
                 <div className="navbar__menu-item">
                     <Link to="/favorites">
-                        <img className="navbar__menu-item--icon" src={heartIcon} alt="home icon"/>
+                        <HeartIcon className="navbar__menu-item--icon" />
                     </Link>
+                </div>
+                <div className="navbar__menu-item">
+                    
+                        <Toggler />
+                    
                 </div>
             </div>
         </div>

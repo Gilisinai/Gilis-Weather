@@ -1,4 +1,4 @@
-$font-1: "";
+$font-1: 'Poppins', sans-serif;
 
 
 $font-2: "";
@@ -28,6 +28,7 @@ $bg-gray:#eee;
 $bg-white:#fff;
 $primaryBG: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);
 
+$transition-time: .5s;
 // Default colors
 $color-danger: #d9534f;
 
@@ -35,8 +36,8 @@ $color-danger: #d9534f;
 $disclaimer-text: 13px;
 
 // Desktop text sizes
-$dsk-headline--1: 7rem;
-$dsk-headline--2: 7rem;
+$dsk-headline--1: 4rem;
+$dsk-headline--2: 2.5rem;
 $dsk-headline--3: 3rem;
 $dsk-article-headline-1: 5rem;
 $dsk-article-headline-2: 5rem;
@@ -48,8 +49,8 @@ $dsk-btn-fs: 2rem;
 $dsk-btn-2-fs: 2.3rem;
 
 // Laptop 1440px
-$lap-headline--1: 7rem;
-$lap-headline--2: 7rem;
+$lap-headline--1: 4rem;
+$lap-headline--2: 2.5rem;
 $lap-headline--3: 3rem;
 $lap-article-headline-1: 6rem;
 $lap-article-headline-2: 6rem;
@@ -61,8 +62,8 @@ $lap-btn-fs: 2.4rem;
 $lap-btn-2-fs: 2.3rem;
 
 // xl 1280px
-$xl-headline--1: 7rem;
-$xl-headline--2: 7rem;
+$xl-headline--1: 4rem;
+$xl-headline--2: 2.5rem;
 $xl-headline--3: 3rem;
 $xl-article-headline-1: 6rem;
 $xl-article-headline-2: 6rem;

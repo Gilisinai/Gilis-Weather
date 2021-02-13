@@ -15,15 +15,29 @@
         align-items: center;
         justify-content: space-between;
         color: $text-color-light;
+        border: 1px solid transparent;
+        transition: all .2s ease-in;
+        border-radius: 3px;
+        padding: 1rem;
+
+        &:hover {
+            border: 1px solid #fff;
+        }
 
         &-item {
             width: 33%;
             display: flex;
             justify-content: center;
+            font-family: $font-1;
 
             &--temp {
                 display: flex;
                 flex-direction: column;
+                justify-content: space-between;
+
+                & p:first-of-type {
+                    margin-bottom: .5rem;
+                }
             }
         }
 

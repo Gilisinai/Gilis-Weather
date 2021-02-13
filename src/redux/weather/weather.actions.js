@@ -25,7 +25,7 @@ export const fetchCurrentWeatherFailure = errorMessage => ({
     payload: errorMessage
 })
 
-export const fetchCurrentWeatherStartAsync = (city) => {
+export const fetchCurrentWeatherStartAsync = (city = 'tel aviv') => {
     return async dispatch => {
         try{
 

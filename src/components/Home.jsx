@@ -37,14 +37,6 @@ function Home() {
 
     }
 
-    // const getCityImage = async (cityName) => {
-    //     const base = `https://api.unsplash.com/photos/?query=${cityName}&client_id=${imageKey}`
-        
-    //     const response = await fetch(base)
-    //     const data = await response.json()
-    //     console.log(data)
-    //     setImage(data[0].urls.raw)
-    // }
 
     const getWeatherByCity = async (city) => {
         const cityToSearch = await getCity(city)
@@ -54,6 +46,7 @@ function Home() {
 
     useEffect(() => {
         // getWeatherByCity('tel aviv')
+        
 
     }, [])
 

@@ -1,5 +1,5 @@
 import { FavoritesActionTypes } from './favorites.types'
-import { addCityTofavorites } from './favorites.utils'
+import { addCityTofavorites, removeCityFromfavorites } from './favorites.utils'
 
 const initialState = {
     favorites: []
@@ -11,6 +11,11 @@ const favoritesReducer = (state = initialState, action) => {
             return {
                 ...state,
                 favorites: addCityTofavorites(state.favorites, action.payload)
+            }
+        case FavoritesActionTypes.REMOVE_CITY_FROM_FAVORITES:
+            return {
+                ...state,
+                favorites: removeCityFromfavorites(state.favorites, action.payload)
             }
         default:
             return state

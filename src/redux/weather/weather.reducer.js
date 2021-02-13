@@ -1,9 +1,11 @@
 import { WeatherActionTypes } from './weather.types'
 
 const initialState = {
+    cityKey: null,
     currentWeather: null,
     fiveDayForecast: null,
-    autoComplete: []
+    isFetching: false,
+    errorMessage: undefined
 }
 
 const weatherReducer = (state = initialState, action) => {
@@ -18,7 +20,31 @@ const weatherReducer = (state = initialState, action) => {
                 ...state,
                 fiveDayForecast: action.payload
             }
-        
+        case WeatherActionTypes.SET_CURRENT_CITY_KEY:
+            return {
+                ...state,
+                cityKey: action.payload
+            }
+        case WeatherActionTypes.FETCH_CURRENT_WEATHER_START:
+            return {
+                ...state,
+                isFetching: true
+            }
+
+        case WeatherActionTypes.FETCH_CURRENT_WEATHER_SUCCESS:
+            return {
+                ...state,
+                isFetching: false,
+                currentWeather: [...action.payload]
+            }
+
+        case WeatherActionTypes.FETCH_CURRENT_WEATHER_FAILURE:
+            return {
+                ...state,
+                isFetching: false,
+                errorMessage: action.payload
+            }
+
         default:
             return state;
     }

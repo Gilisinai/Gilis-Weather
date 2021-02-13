@@ -1,17 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { setCurrentWeather } from '../redux/weather/weather.actions'
+import { setCurrentWeather , fetchCurrentWeatherStartAsync } from '../redux/weather/weather.actions'
 import { addCityToFavorites } from '../redux/favorites/favorites.actions'
 
 import currentWeatherResponse from '../responses/currentWeatherResponse'
-import currentCityResponse from '../responses/currentCityResponse'
-import WeatherIcon from './WeatherIcon'
 
-function CurrentWeather({ setCurrentWeather, addCityToFavorites, currentWeather }) {
+
+function CurrentWeather({ setCurrentWeather, addCityToFavorites, currentWeather, fetchCurrentWeatherStartAsync }) {
 
     useEffect(() => {
         console.log(currentWeatherResponse[0])
-        setCurrentWeather(currentWeatherResponse[0])
+        // setCurrentWeather(currentWeatherResponse[0])
+        fetchCurrentWeatherStartAsync()
     }, [])
 
     return (
@@ -54,7 +54,8 @@ const mapStateToProps = state => ({
 
 const mapDispatchToProps = dispatch => ({
     setCurrentWeather: currentWeather => dispatch(setCurrentWeather(currentWeather)),
-    addCityToFavorites: city => dispatch(addCityToFavorites(city))
+    addCityToFavorites: city => dispatch(addCityToFavorites(city)),
+    fetchCurrentWeatherStartAsync: () => dispatch(fetchCurrentWeatherStartAsync())
 })
 
 

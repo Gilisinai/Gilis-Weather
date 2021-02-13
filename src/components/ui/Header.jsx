@@ -15,12 +15,12 @@ function Header(props) {
 
         <div className="navbar">
             <div className="navbar__menu">
-                <div class="navbar__menu-item">
+                <div className="navbar__menu-item">
                     <Link to="/">
                         <img className="navbar__menu-item--icon" src={homeIcon} alt="home icon"/>
                     </Link>
                 </div>
-                <div class="navbar__menu-item">
+                <div className="navbar__menu-item">
                     <Link to="/favorites">
                         <img className="navbar__menu-item--icon" src={heartIcon} alt="home icon"/>
                     </Link>

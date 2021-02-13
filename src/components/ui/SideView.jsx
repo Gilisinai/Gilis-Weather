@@ -2,7 +2,7 @@ import React from 'react'
 
 function SideView({children}) {
     return (
-        <div class="sideview">
+        <div className="sideview">
             {children}
         </div>
     )

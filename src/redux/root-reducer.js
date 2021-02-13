@@ -4,6 +4,8 @@ import storage from 'redux-persist/lib/storage'
 
 import weatherReducer from './weather/weather.reducer'
 import favoritesReducer from './favorites/favorites.reducer'
+import autocompleteReducer from './autocomplete/autocomplete.reducer'
+
 
 const persistConfig = {
     key: 'root',
@@ -13,7 +15,8 @@ const persistConfig = {
 
 const rootReducer = combineReducers({
     weather: weatherReducer,
-    favorites: favoritesReducer
+    favorites: favoritesReducer,
+    autocomplete: autocompleteReducer
 })
 
 export default persistReducer(persistConfig, rootReducer)

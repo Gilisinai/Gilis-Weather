@@ -9,3 +9,15 @@ export const addCityTofavorites = (favorites, cityToAdd) => {
 
    return [...favorites, {...cityToAdd }]
 }
+
+export const removeCityFromfavorites = (favorites, cityToRemove) => {
+    
+    for(let i = 0; i < favorites.length; i++) {
+        if(favorites[i].Key === cityToRemove.Key) {
+            favorites.splice(i,1)
+        }
+    }
+    
+
+    return [...favorites]
+ }

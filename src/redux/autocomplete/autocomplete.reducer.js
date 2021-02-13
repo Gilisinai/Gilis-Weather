@@ -2,6 +2,7 @@ import {AutocompleteActionTypes} from './autocomplete.types'
 
 const initialState = {
     options: [],
+    searchQuery: null,
     isFetching: false,
     errorMessage: undefined
 }
@@ -24,6 +25,11 @@ const autocompleteReducer = (state = initialState, action) => {
                 ...state,
                 isFetching: false,
                 errorMessage: action.payload
+            }
+        case AutocompleteActionTypes.FETCH_SEARCH_QUERY:
+            return {
+                ...state,
+                searchQuery: action.payload
             }
         default:
             return state

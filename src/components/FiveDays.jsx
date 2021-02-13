@@ -8,7 +8,7 @@ function FiveDays({ fiveDayForecast, cityKey , fetchForecastStartAsync}) {
     useEffect(() => {
         fetchForecastStartAsync(cityKey)
 
-    }, [])
+    }, [cityKey])
 
 
     return (

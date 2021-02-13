@@ -30,7 +30,7 @@ export const fetchCurrentWeatherStartAsync = (city) => {
         try{
 
             dispatch(fetchCurrentWeatherStart())
-            const key = process.env.REACT_APP_WEATHER_API_KEY_1
+            const key = process.env.REACT_APP_WEATHER_API_KEY
             const cityUrl = `http://dataservice.accuweather.com/locations/v1/cities/search?apikey=${key}&q=${city}`
             const cityRes = await fetch(cityUrl)
             const cityData = await cityRes.json()
@@ -65,7 +65,7 @@ export const fetchForecastStartAsync = (locationKey) => {
         try{
 
             dispatch(fetchForcastStart())
-            const key = process.env.REACT_APP_WEATHER_API_KEY_1
+            const key = process.env.REACT_APP_WEATHER_API_KEY
             const forecastUrl = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=${key}`
             const forecastRes = await fetch(forecastUrl)
             const forecastData = await forecastRes.json()

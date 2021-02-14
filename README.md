@@ -22,13 +22,13 @@ Kelev-App is a social network app that connects dog owners , dogs and dog-parks.
 
 When the user opens the app for the fist time, by default he gets weather information related to telaviv.
 
-<p align="center"><img src="src/assets/screenshots/light_mob" width="600" /></p>
+<p align="center"><img src="src/assets/screenshots/light_mob.png" width="600" /></p>
 
 ### favorites
 
 A user can click on the start next to the city and add it to the favorites
 
-<p align="center"><img src="src/assets/screenshots/light_mob" width="600" /></p>
+<p align="center"><img src="src/assets/screenshots/light_mob.png" width="600" /></p>
 
 ### responsive
 
@@ -51,14 +51,11 @@ A user can add new dog to his list or edit the dog's details if needed.
 
 ## Techstack
 
-- React with MobX
-- MySQL
-- Google API's (maps, places, directions, matrix)
-- NodeJS, Express
-- Ant design
+- React with Redux & Thunk.
+- Design with sass.
+- Accuweather API for weather.
+- NodeJS.
+- React lottie for animations.
+- Dayjs for date formatting.
 
-## TODO
 
-1. make the app user authenticated.
-2. Add favorite dogs featue.
-3. Add a Dog Walker feature. 

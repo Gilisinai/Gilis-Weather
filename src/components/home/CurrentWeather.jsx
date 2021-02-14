@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { setCurrentWeather, fetchCurrentWeatherStartAsync } from '../../redux/weather/weather.actions'
 import { addCityToFavorites } from '../../redux/favorites/favorites.actions'

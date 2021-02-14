@@ -38,11 +38,18 @@
 
     &__btn {
         border: 1px solid #fff;
+        background: transparent;
         border-top-right-radius: $border-radius;
         border-bottom-right-radius: $border-radius;
         padding: 1rem;
+        transition: $transition-time ease-in;
+
         &:not(:disabled) {
             cursor: pointer;
+        }
+
+        &:disabled {
+            background: $bg-gray;
         }
     }
 }

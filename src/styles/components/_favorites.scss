@@ -22,7 +22,7 @@
         &-ah--1 {
             color: $text-color-light;
             font-weight: $fw-light;
-            padding: 2rem;
+            padding: 1rem;
 
             @include respond(xs) {
                 padding: 1rem;

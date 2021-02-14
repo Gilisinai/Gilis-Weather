@@ -4,7 +4,7 @@ import { fetchForecastStartAsync } from '../../redux/weather/weather.actions'
 import DayCard from './DayCard'
 import Loader from '../ui/Loader'
 
-function FiveDays({ fiveDayForecast, cityKey , fetchForecastStartAsync, isLoading}) {
+function FiveDays({ fiveDayForecast, cityKey , fetchForecastStartAsync, isLoading, error}) {
 
     useEffect(() => {
         fetchForecastStartAsync(cityKey)
@@ -13,7 +13,7 @@ function FiveDays({ fiveDayForecast, cityKey , fetchForecastStartAsync, isLoadin
 
     return (
         <div className="forecast">
-            { isLoading ? <Loader /> : 
+            { error ? '' : isLoading ? <Loader /> :
             fiveDayForecast && fiveDayForecast.map((day, index) => (
                 <DayCard key={index} data={day} />
             ))}
@@ -25,7 +25,8 @@ function FiveDays({ fiveDayForecast, cityKey , fetchForecastStartAsync, isLoadin
 const mapStateToProps = state => ({
     fiveDayForecast: state.weather.fiveDayForecast,
     cityKey: state.weather.cityKey,
-    isLoading: state.weather.isFetchingForecast
+    isLoading: state.weather.isFetchingForecast,
+    error: state.weather.errorMessage,
 })
 
 const mapDispatchToProps = dispatch => ({

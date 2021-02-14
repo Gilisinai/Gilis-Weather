@@ -1,5 +1,5 @@
 import { WeatherActionTypes } from './weather.types'
-import { checkIfInFavorite } from './weather.utils'
+
 
 const initialState = {
     cityKey: null,

@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { connect } from 'react-redux'
 import Layout from '../ui/Layout'
 import SideView from '../ui/SideView'
@@ -11,9 +11,6 @@ function Home({cityKey}) {
     
     return (
         <>
-
-
-           
             <Layout >
                 <SideView>
                     <CitySearch />

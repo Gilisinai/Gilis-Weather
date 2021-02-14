@@ -71,7 +71,7 @@ export const fetchForecastStartAsync = (locationKey) => {
 
             dispatch(fetchForcastStart())
             const key = process.env.REACT_APP_WEATHER_API_KEY
-            const forecastUrl = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=${key}`
+            const forecastUrl = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=${key}&metric=true`
             const forecastRes = await fetch(forecastUrl)
             const forecastData = await forecastRes.json()
             dispatch(fetchForcastSuccess([...forecastData.DailyForecasts]))     

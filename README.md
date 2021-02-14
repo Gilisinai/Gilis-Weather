@@ -22,32 +22,28 @@ Kelev-App is a social network app that connects dog owners , dogs and dog-parks.
 
 When the user opens the app for the fist time, by default he gets weather information related to telaviv.
 
-<p align="center"><img src="src/assets/screenshots/light_mob.png" width="600" /></p>
+<p align="center"><img src="src/assets/screenshots/light_mob.png" width="200" /></p>
 
 ### favorites
 
 A user can click on the start next to the city and add it to the favorites
 
-<p align="center"><img src="src/assets/screenshots/light_mob.png" width="600" /></p>
+<p align="center"><img src="src/assets/screenshots/light_mob.png" width="200" /></p>
 
 ### responsive
 
-As a user clicks on a pop-up of a certain dog-park , the app provides him with the inforamtion of who is currently at the park, who's on its way, park ameneties as well as park pics & rating. 
+We can find this app responsive across all of the relevant platforms (desktop, laptop , ipad pro, ipad & mobile)
 
-<p align="center"><img src="assets/kelev-dogpark.PNG" width="250" /></p>
+<p align="center"><img src="src/assets/screenshots/light_desk.png" width="500" /></p>
+<p align="center"><img src="src/assets/screenshots/light_ipad.png" width="300" /></p>
 
 ### Dark Mode 
 
-The user page contains menu where he can access his dogs page , and see the upcomig features. When he clicks on a profile he can see a list of his dogs and have the ability to choose with which of the dogs he is going to the park.
+The user can toggle between night and dark mode
 
-<p align="center"><img src="assets/menu-profile.PNG" width="600" /></p>
-
-
-A user can add new dog to his list or edit the dog's details if needed.
-
-<p align="center"><img src="assets/profile-features.PNG" width="600" /></p>
-
-
+<p align="center"><img src="src/assets/screenshots/dark_desk.png" width="500" /></p>
+<p align="center"><img src="src/assets/screenshots/dark_ipad.png" width="300" /></p>
+<p align="center"><img src="src/assets/screenshots/dark_mob.png" width="200" /></p>
 
 ## Techstack
 

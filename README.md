@@ -5,7 +5,7 @@ Weather app is an easy to use app that aloow us to searce for the weather in a s
 
 # Table Of Contents
 
-- [Kelev-App](#kelev-app)
+- [Weather App](#Weather-app)
   - [Screenshots](#screenshots)
     - [Weather Screen](#first-screen)
     - [favorites](#favorites)

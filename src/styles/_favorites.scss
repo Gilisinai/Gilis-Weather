@@ -1,5 +1,62 @@
 .favorite {
     &__card {
         display: flex;
+        border-radius: $border-radius;
+        border: 1px solid #fff;
+        width: 70%;
+        justify-content: space-between;
+
+        &:hover {
+            border: 1px solid #fff;
+        }
+
+        &-ah--1 {
+            color: $text-color-light;
+            font-weight: $fw-light;
+            padding: 2rem;
+        }
+
+    }
+
+    &__btn {
+        background-color: transparent;
+        border: 1px solid #fff;
+        min-height: 50%;
+        padding: 1rem;
+        outline: none;
+        cursor: pointer;
+        background-color: #fff;
+        transition: $transition-time;
+
+        &:hover {
+            background-color: transparent;
+
+            & svg path:last-of-type {
+                fill: $text-color-light;
+            }
+        }
+
+        &:first-of-type {
+            border-bottom-color: $color-2;
+            border-top-right-radius: $border-radius;
+        }
+
+        &:last-of-type {
+            border-top-color: $color-2;
+            border-bottom-right-radius: $border-radius;
+        }
+
+        & svg path:last-of-type {
+            fill: $color-2;
+        }
+
+        &-wrapper {
+            display: flex;
+            flex-direction: column;
+        }
+    }
+
+    &-h--1 {
+        margin-bottom: 4rem;
     }
 }

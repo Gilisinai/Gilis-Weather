@@ -3,6 +3,7 @@ import { connect } from 'react-redux'
 import { setCurrentWeather , fetchCurrentWeatherStartAsync } from '../redux/weather/weather.actions'
 import { addCityToFavorites } from '../redux/favorites/favorites.actions'
 
+import  { ReactComponent as HeartIcon } from '../assets/icons/heart.svg'
 import Loader from './ui/Loader'
 
 import dayjs from 'dayjs'
@@ -36,7 +37,7 @@ function CurrentWeather({ addCityToFavorites,fetchCurrentWeatherStartAsync, curr
 
                 <div className="current__weather-utils">
                     <div onClick={()=> addCityToFavorites(currentWeather)} className="current__weather-utils--icon">
-                        add to favorites
+                        <HeartIcon />
                     </div>
 
                 </div>

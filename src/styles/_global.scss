@@ -49,11 +49,16 @@
   }
   
   .main-layout {
-    background-image: url('../assets/paris.jpg');
+    background-image: linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url('../assets/clearday.jpg');
     background-size: 100% 100%;
     max-width: 100vw;
     max-height: 100vh;
     display: flex;
+
+    @include respond(md) {
+      height: 100vh;
+      width: 100vw;
+    }
   }
 
   img {
@@ -67,18 +72,51 @@
 
   & *[class*="-h--1"] {
     @extend %headline-1-fs;
+
+    color: $text-color-light;
+    font-weight: $fw-thin;
   }
 
   & *[class*="-h--2"] {
     @extend %headline-2-fs;
+
+    color: $text-color-light;
+    font-weight: $fw-thin;
+  }
+
+  & *[class*="-h--3"] {
+    @extend %headline-3-fs;
+
+    color: $text-color-light;
+    font-weight: $fw-bold;
+  }
+
+  & *[class*="-ah--1"] {
+    @extend %article-headline-1-fs;
+
+    color: $text-color-light;
+    font-weight: $fw-thin;
+  }
+
+  & *[class*="-ah--2"] {
+    @extend %article-headline-2-fs;
+
+    color: $text-color-light;
+    font-weight: $fw-thin;
   }
 
   & *[class*="-p--1"] {
     @extend %para-1-fs;
+
+    color: $text-color-light;
+    font-weight: $fw-thin;
   }
   
     & *[class*="-p--2"] {
     @extend %para-2-fs;
+
+    color: $text-color-light;
+    font-weight: $fw-thin;
   }
 
     

@@ -1,12 +1,15 @@
 .temperature {
     margin-top: 10rem;
     padding-left: 10rem;
+    display: flex;
 
-    &-h--1 {
-        color: $text-color-light;
+    @include respond(md) {
+        padding-left: 4rem;
     }
 
     &__details {
-        display: flex;
+        & img {
+            min-width: 15rem;
+        }
     }
 }

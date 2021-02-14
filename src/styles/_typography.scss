@@ -86,3 +86,71 @@
       font-size: $mob-headline--2;
     }
   }
+
+  %headline-3-fs {
+    font-size: $dsk-headline--3;
+  
+    @include respond(laptops) {
+      font-size: $lap-headline--3;
+    }
+  
+    @include respond(xl) {
+      font-size: $xl-headline--3;
+    }
+  
+    @include respond(lg) {
+      font-size: $ipro-headline--3;
+    }
+  
+    @include respond(xs) {
+      font-size: $mob-headline--3;
+    }
+  }
+
+  %article-headline-1-fs {
+    font-size: $dsk-article-headline-1;
+  
+    @include respond(laptops) {
+      font-size: $lap-article-headline-1;
+    }
+  
+    @include respond(xl) {
+      font-size: $xl-article-headline-1;
+    }
+  
+    @include respond(lg) {
+      font-size: $ipro-article-headline-1;
+    }
+  
+    @include respond(md) {
+      font-size: $ip-article-headline-1;
+    }
+  
+    @include respond(xs) {
+      font-size: $mob-article-headline-1;
+    }
+  }
+  
+  %article-headline-2-fs {
+    font-size: $dsk-article-headline-2;
+  
+    @include respond(laptops) {
+      font-size: $lap-article-headline-2;
+    }
+  
+    @include respond(xl) {
+      font-size: $xl-article-headline-2;
+    }
+  
+    @include respond(lg) {
+      font-size: $ipro-article-headline-2;
+    }
+  
+    @include respond(md) {
+      font-size: $ip-article-headline-2;
+    }
+  
+    @include respond(xs) {
+      font-size: $mob-article-headline-2;
+    }
+  }

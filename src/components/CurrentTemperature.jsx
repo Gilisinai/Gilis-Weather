@@ -4,16 +4,21 @@ import WeatherIcon from './WeatherIcon'
 import Loader from './ui/Loader'
 
 
-function CurrentTemperature({temperature, isLoading}) {
+function CurrentTemperature({temperature, isLoading, description}) {
     
     return (
         <div className="temperature">
             {isLoading ? <Loader /> : 
-            
+            <>
                 <div className="temperature__details">
-                    <WeatherIcon iconCode={21} />
-                    <h1 className="temperature-h--1">{temperature}</h1> 
+                    <WeatherIcon className="temperature__details-icon" iconCode={21} />
                 </div>
+                <div className="temperature__details">
+                    <h1 className="temperature-h--3">{temperature}&#8451;</h1> 
+                    <h1 className="temperature-h--1">{description}</h1> 
+
+                </div>
+            </>
             }
         </div>
     )
@@ -21,7 +26,8 @@ function CurrentTemperature({temperature, isLoading}) {
 
 const mapStateToProps = state => ({
     temperature: state.weather.currentWeather.Temperature.Metric.Value,
-    isLoading: state.weather.isFetchingCurrent
+    isLoading: state.weather.isFetchingCurrent,
+    description: state.weather.currentWeather.WeatherText
 })
 
 export default connect(mapStateToProps)(CurrentTemperature)

@@ -17,7 +17,7 @@ $fw-black: 900;
 
 // ===Colors===
 $color-1:#9f12f1;
-$color-2:#97a321;
+$color-2:#2D79DB;
 $color-3:#19eb97;
 $color-4:#5888b4;
 $text-color-dark:#333;
@@ -29,17 +29,18 @@ $bg-white:#fff;
 $primaryBG: linear-gradient( 135deg, #ABDCFF 10%, #0396FF 100%);
 
 $transition-time: .5s;
+$border-radius: 10px;
+$text-shadow: 4px 2px rgba(0,0,0,0.4);
 // Default colors
 $color-danger: #d9534f;
 
 // ===Text Sizes===
-$disclaimer-text: 13px;
 
 // Desktop text sizes
 $dsk-headline--1: 4rem;
 $dsk-headline--2: 2.5rem;
-$dsk-headline--3: 3rem;
-$dsk-article-headline-1: 5rem;
+$dsk-headline--3: 8rem;
+$dsk-article-headline-1: 2.7rem;
 $dsk-article-headline-2: 5rem;
 $dsk-article-headline-3: 5rem;
 $dsk-article-headline-4: 3rem;
@@ -51,35 +52,35 @@ $dsk-btn-2-fs: 2.3rem;
 // Laptop 1440px
 $lap-headline--1: 4rem;
 $lap-headline--2: 2.5rem;
-$lap-headline--3: 3rem;
-$lap-article-headline-1: 6rem;
+$lap-headline--3: 8rem;;
+$lap-article-headline-1: 2.7rem;
 $lap-article-headline-2: 6rem;
 $lap-article-headline-3: 5rem;
 $lap-article-headline-4: 3rem;
-$lap-article-paragraph-1: 2.5rem;
-$lap-article-paragraph-2: 2.5rem;
+$lap-article-paragraph-1: 2rem;
+$lap-article-paragraph-2: 1.5rem;
 $lap-btn-fs: 2.4rem;
 $lap-btn-2-fs: 2.3rem;
 
 // xl 1280px
 $xl-headline--1: 4rem;
 $xl-headline--2: 2.5rem;
-$xl-headline--3: 3rem;
-$xl-article-headline-1: 6rem;
+$xl-headline--3: 8rem;
+$xl-article-headline-1: 2.7rem;
 $xl-article-headline-2: 6rem;
 $xl-article-headline-3: 5rem;
 $xl-article-headline-4: 4rem;
-$xl-article-paragraph-1: 2.5rem;
-$xl-article-paragraph-2: 2.5rem;
+$xl-article-paragraph-1: 2rem;
+$xl-article-paragraph-2: 1.5rem;
 $xl-btn-fs: 2rem;
 $xl-btn-2-fs: 2.3rem;
 
 // ipad pro text sizes
-$ipro-headline--1: 6rem;
-$ipro-headline--2: 6rem;
+$ipro-headline--1: 4rem;
+$ipro-headline--2: 2.5rem;
 $ipro-headline--3: 3rem;
-$ipro-article-headline-1: 6rem;
-$ipro-article-headline-2: 6rem;
+$ipro-article-headline-1: 2.5rem;
+$ipro-article-headline-2: 2rem;
 $ipro-article-headline-3: 5rem;
 $ipro-article-headline-4: 3rem;
 $ipro-article-paragraph-1: 2.2rem;
@@ -88,21 +89,21 @@ $ipro-btn-fs: 2rem;
 $ipro-btn-2-fs: 2.3rem;
 
 // ipad
-$ip-headline--1: 6rem;
-$ip-headline--2: 6rem;
-$ip-headline--3: 3rem;
+$ip-headline--1: 3rem;
+$ip-headline--2: 2rem;
+$ip-headline--3: 5rem;
 $ip-article-headline-1: 5rem;
 $ip-article-headline-2: 5rem;
 $ip-article-headline-3: 5rem;
 $ip-article-headline-4: 3rem;
 $ip-article-paragraph-1: 2.2rem;
-$ip-article-paragraph-2: 2.5rem;
+$ip-article-paragraph-2: 2rem;
 $ip-btn-fs: 2rem;
 $ip-btn-2-fs: 2.3rem;
 
 // mobile  text sizes
-$mob-headline--1: 6rem;
-$mob-headline--2: 6rem;
+$mob-headline--1: 3rem;
+$mob-headline--2: 2rem;
 $mob-headline--3: 3rem;
 $mob-article-headline-1: 4rem;
 $mob-article-headline-2: 4rem;

@@ -1,13 +1,15 @@
 import React from 'react'
-import WeatherIcon from './WeatherIcon'
 import { useHistory } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { removeCityFromFavorites } from '../redux/favorites/favorites.actions'
 import { fetchCurrentWeatherStartAsync } from '../redux/weather/weather.actions'
+import  { ReactComponent as DeleteIcon } from '../assets/icons/delete.svg'
+import  { ReactComponent as TempIcon } from '../assets/icons/temp.svg'
+
 
 
 function FavouriteCard({ data, removeCityFromFavorites, fetchCurrentWeatherStartAsync }) {
-    const { Temperature, WeatherText, Date, LocalizedName } = data
+    const { LocalizedName , Country } = data
     const history = useHistory()
 
     const viewFavoriteWeather = (LocalizedName) => {
@@ -16,20 +18,16 @@ function FavouriteCard({ data, removeCityFromFavorites, fetchCurrentWeatherStart
     }
 
     return (
-        <div className="favorite__card" onClick={()=> viewFavoriteWeather(LocalizedName)}>
+        <div className="favorite__card" >
+            
             <div className="favorite__card-item">
-                <WeatherIcon iconCode={21} />
+                <h1 className="favorite__card-ah--1" >  {LocalizedName}, {Country.LocalizedName} </h1>
             </div>
-            <div className="favorite__card-item">
-                <h1>  {LocalizedName} </h1>
-            </div>
-            <div className="favorite__card-item favorite__card-item--temp">
+            <div className="favorite__btn-wrapper">
 
-                <p>
-                    {WeatherText}
-                </p>
+                <button className="favorite__btn" onClick={()=> viewFavoriteWeather(LocalizedName)}><TempIcon /></button>
+                <button className="favorite__btn" onClick={() => removeCityFromFavorites(data)}><DeleteIcon /></button>
             </div>
-            <button onClick={() => removeCityFromFavorites(data)}>Remove from favorites</button>
         </div>
     )
 }

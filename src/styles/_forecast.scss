@@ -5,11 +5,10 @@
     min-height: 60%;
     justify-content: space-evenly;
     margin-top: 2rem;
-    max-width: 50%;
     margin: 0 auto;
 
     &__card {
-        width: 100%;
+        max-width: 80%;
         margin-bottom: 2rem;
         display: flex;
         align-items: center;
@@ -17,8 +16,9 @@
         color: $text-color-light;
         border: 1px solid transparent;
         transition: all .2s ease-in;
-        border-radius: 3px;
+        border-radius: $border-radius;
         padding: 1rem;
+        padding-left: 0;
 
         &:hover {
             border: 1px solid #fff;

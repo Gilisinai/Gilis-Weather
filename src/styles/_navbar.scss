@@ -10,13 +10,33 @@
     background: rgba(47, 128, 237, 0.6);
     backdrop-filter: blur(24px);
 
+    @include respond(md) {
+        width: 100vw;
+        bottom: 0;
+        height: unset;
+        padding: 2rem;
+        z-index: 1;
+    }
+
     &__menu {
         display: flex;
         flex-direction: column;
 
+        @include respond(md) {
+            flex-direction: row;
+            width: 100%;
+            justify-content: space-evenly;
+            align-items: center;
+        }
+
         &-item {
             
             margin-bottom: 4rem;
+
+            @include respond(md) {
+                min-width: 6rem;
+                margin-bottom: unset;
+            }
 
             & a {
                 text-decoration: none;

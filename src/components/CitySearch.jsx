@@ -2,6 +2,7 @@ import React from 'react'
 import { connect } from 'react-redux'
 import { fetchAutocompleteStartAsync , checkVaildInput} from '../redux/autocomplete/autocomplete.actions'
 import { fetchCurrentWeatherStartAsync } from '../redux/weather/weather.actions'
+import  { ReactComponent as SearchIcon } from '../assets/icons/search.svg'
 
 function CitySearch({ fetchAutocompleteStartAsync, options, searchQuery, fetchCurrentWeatherStartAsync, checkVaildInput, isMatch }) {
 
@@ -13,14 +14,14 @@ function CitySearch({ fetchAutocompleteStartAsync, options, searchQuery, fetchCu
 
     return (
         <div className="search">
-            <input name="autocomplete" id="search-input" list="autocomplete" placeholder="enter city" onChange={handleSearch} />
+            <input name="autocomplete" id="search-input" list="autocomplete" placeholder="Enter City" onChange={handleSearch} />
             <datalist id="autocomplete">
                 {options.length > 0 ?
                     options.map((option) => (
-                        <option key={option.Key}>{option.LocalizedName}</option>
+                        <option key={option.Key} disabled>{option.LocalizedName}</option>
                     )) : <option>no options </option>}
             </datalist>
-            <button onClick={() => fetchCurrentWeatherStartAsync(searchQuery)} disabled={!isMatch} >search</button>
+            <button className='search__btn' onClick={() => fetchCurrentWeatherStartAsync(searchQuery)} disabled={!isMatch} ><SearchIcon /></button>
         </div>
     )
 }

@@ -14,12 +14,10 @@ function App({fetchCurrentWeatherStartAsync}) {
  })
   return (
     <>
-
       <Switch>
         <Route exact path="/" component={Home} />
         <Route path="/favorites" component={Favourites} />
       </Switch>
-
     </>
   );
 }

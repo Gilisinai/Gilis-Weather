@@ -1,12 +1,14 @@
 import React from 'react'
 import Header from './Header'
 import { connect } from 'react-redux'
+import { changeBackgroundByTemperature } from '../../redux/ui/ui.actions'
 
-function Layout({ children, darkMode }) {
+function Layout({ children, darkMode, temperature ,changeBackgroundByTemperature }) {
+    
     return (
         <>
             <Header />
-            <div className={`main-layout ${darkMode ? 'main-layout-dark' : ''}`}>
+            <div className={`main-layout ${darkMode ? 'main-layout-dark' : ''} ${temperature}`}>
                 {children}
 
             </div>
@@ -15,7 +17,7 @@ function Layout({ children, darkMode }) {
 }
 
 const mapStateToProps = state => ({
-    darkMode: state.ui.darkMode
+    darkMode: state.ui.darkMode,
 })
 
 export default connect(mapStateToProps)(Layout)

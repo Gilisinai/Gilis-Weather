@@ -1,7 +1,7 @@
 import { uiActionTypes } from './ui.types'
 
 const initialState = {
-    darkMode: false
+    darkMode: null,
 }
 
 const uiReducer = (state = initialState, action) => {

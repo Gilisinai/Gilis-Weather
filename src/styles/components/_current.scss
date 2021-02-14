@@ -15,6 +15,10 @@
         &-details {
             display: flex;
             color: $text-color-light;
+
+            @include respond(xs) {
+                margin-left: 2.5rem;
+            }
         }
 
         &-icon {

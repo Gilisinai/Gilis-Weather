@@ -1,6 +1,6 @@
-# Kelev-App
+# Weather App
 
-Kelev-App is a social network app that connects dog owners , dogs and dog-parks. 
+Weather app is an easy to use app that aloow us to searce for the weather in a specific city, and add to favorites.
 
 
 # Table Of Contents
@@ -41,7 +41,7 @@ We can find this app responsive across all of the relevant platforms (desktop, l
 
 The user can toggle between night and dark mode
 
-<p align="center"><img src="src/assets/screenshots/dark_desk.png" width="500" /></p>
+<p align="center"><img src="src/assets/screenshots/dark_dsk.png" width="500" /></p>
 <p align="center"><img src="src/assets/screenshots/dark_ipad.png" width="300" /></p>
 <p align="center"><img src="src/assets/screenshots/dark_mob.png" width="200" /></p>
 

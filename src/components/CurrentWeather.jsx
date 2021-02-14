@@ -1,20 +1,17 @@
-import React, { useEffect } from 'react'
+import React from 'react'
 import { connect } from 'react-redux'
 import { setCurrentWeather , fetchCurrentWeatherStartAsync } from '../redux/weather/weather.actions'
 import { addCityToFavorites } from '../redux/favorites/favorites.actions'
 
 import  { ReactComponent as HeartIcon } from '../assets/icons/heart.svg'
 import Loader from './ui/Loader'
+import RequestError from './ui/RequestError'
+import Like from './ui/Like'
 
 import dayjs from 'dayjs'
 
 
-function CurrentWeather({ addCityToFavorites,fetchCurrentWeatherStartAsync, currentWeather, isLoading }) {
-
-    useEffect(() => {
-        
-        // fetchCurrentWeatherStartAsync()
-    }, [])
+function CurrentWeather({ addCityToFavorites, currentWeather, isLoading, error }) {
 
     return (
 
@@ -22,6 +19,8 @@ function CurrentWeather({ addCityToFavorites,fetchCurrentWeatherStartAsync, curr
         <section className="current">
             {isLoading ? <Loader /> : 
             
+            error ? <RequestError /> :
+
             <div className="current__weather">
                 <div className="current__weather-details">
                     <div>
@@ -37,7 +36,7 @@ function CurrentWeather({ addCityToFavorites,fetchCurrentWeatherStartAsync, curr
 
                 <div className="current__weather-utils">
                     <div onClick={()=> addCityToFavorites(currentWeather)} className="current__weather-utils--icon">
-                        <HeartIcon />
+                        <Like />
                     </div>
 
                 </div>
@@ -52,7 +51,8 @@ function CurrentWeather({ addCityToFavorites,fetchCurrentWeatherStartAsync, curr
 
 const mapStateToProps = state => ({
     currentWeather: state.weather.currentWeather,
-    isLoading: state.weather.isFetchingCurrent
+    isLoading: state.weather.isFetchingCurrent,
+    error: state.weather.errorMessage,
 })
 
 const mapDispatchToProps = dispatch => ({

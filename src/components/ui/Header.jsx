@@ -1,24 +1,25 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
-import { withRouter } from 'react-router-dom'
-import  { ReactComponent as HomeIcon } from '../../assets/icons/home.svg'
-import  { ReactComponent as HeartIcon } from '../../assets/icons/heart.svg'
+import { Link, withRouter } from 'react-router-dom'
+import { connect } from 'react-redux'
+import { ReactComponent as HomeIcon } from '../../assets/icons/home.svg'
+import { ReactComponent as HeartIcon } from '../../assets/icons/heart.svg'
+import { toggleDarkMode } from '../../redux/ui/ui.actions'
 import Toggler from './Toggler'
 
 
 
-function Header() {
+function Header({darkMode, toggleDarkMode}) {
 
 
     return (
 
 
-        <div className="navbar">
+        <div className={`navbar ${darkMode ? 'navbar-dark': ''}`}>
             <div className="navbar__menu">
                 <div className="navbar__menu-item">
                     <Link to="/">
-                        <HomeIcon className="navbar__menuitem--icon"/>
-                        
+                        <HomeIcon className="navbar__menuitem--icon" />
+
                     </Link>
                 </div>
                 <div className="navbar__menu-item">
@@ -26,10 +27,10 @@ function Header() {
                         <HeartIcon className="navbar__menu-item--icon" />
                     </Link>
                 </div>
-                <div className="navbar__menu-item">
-                    
-                        <Toggler />
-                    
+                <div className="navbar__menu-item" onClick={() =>toggleDarkMode(darkMode)}>
+
+                    <Toggler />
+
                 </div>
             </div>
         </div>
@@ -40,4 +41,12 @@ function Header() {
     )
 }
 
-export default withRouter(Header)
+const mapStateToProps = state => ({
+    darkMode: state.ui.darkMode
+})
+
+const mapDispatchToProps = dispatch => ({
+    toggleDarkMode: (mode) => dispatch(toggleDarkMode(mode))
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(withRouter(Header))

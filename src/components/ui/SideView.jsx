@@ -1,11 +1,16 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-function SideView({children}) {
+function SideView({ children, darkMode}) {
     return (
-        <div className="sideview">
+        <div className={`sideview ${darkMode ? 'sideview-dark' : ''}`}>
             {children}
         </div>
     )
 }
 
-export default SideView
+const mapStateToProps = state => ({
+    darkMode: state.ui.darkMode
+})
+
+export default connect(mapStateToProps)(SideView)

@@ -1,5 +1,6 @@
 .toggler {
     position: relative;
+    cursor: pointer;
 }
 
 input[type="checkbox"] {
@@ -7,15 +8,16 @@ input[type="checkbox"] {
     width: 8rem;
     height: 4rem;
     appearance: none;
-    background: #c6c6c6;
+    background: #03a9f4;
     outline: none;
     border-radius: 2rem;
     box-shadow: inset 0 0 5px rgba(0,0,0,.2);
     transition: $transition-time;
+    cursor: pointer;
 }
 
 input:checked[type="checkbox"] {
-    background: #03a9f4;
+    background: #c6c6c6;
 }
 
 input[type="checkbox"]:before {
@@ -26,13 +28,14 @@ input[type="checkbox"]:before {
     border-radius: 50%;
     top: 0;
     left: 0;
-    background: #fff;
+    background: $color-1;
     transition: $transition-time;
     box-shadow: 0 2px 5px rgba(0,0,0,.2);
     transform: scale(1.1);
+
 }
 
 input:checked[type="checkbox"]:before {
    left: 4rem;
-    
+    background: #fff;
 }

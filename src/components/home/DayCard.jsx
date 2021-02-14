@@ -1,6 +1,6 @@
 import React from 'react'
 import dayjs from 'dayjs'
-import WeatherIcon from './WeatherIcon'
+import WeatherIcon from '../shared/WeatherIcon'
 
 function DayCard({ data }) {
     const { Temperature, Day, Date } = data

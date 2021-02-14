@@ -1,8 +1,8 @@
 import React from 'react'
 import { connect } from 'react-redux'
-import { fetchAutocompleteStartAsync , checkVaildInput} from '../redux/autocomplete/autocomplete.actions'
-import { fetchCurrentWeatherStartAsync } from '../redux/weather/weather.actions'
-import  { ReactComponent as SearchIcon } from '../assets/icons/search.svg'
+import { fetchAutocompleteStartAsync , checkVaildInput} from '../../redux/autocomplete/autocomplete.actions'
+import { fetchCurrentWeatherStartAsync } from '../../redux/weather/weather.actions'
+import  { ReactComponent as SearchIcon } from '../../assets/icons/search.svg'
 
 function CitySearch({ fetchAutocompleteStartAsync, options, searchQuery, fetchCurrentWeatherStartAsync, checkVaildInput, isMatch }) {
 

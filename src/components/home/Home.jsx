@@ -1,11 +1,11 @@
 import React, { useEffect } from 'react';
 import { connect } from 'react-redux'
-import Layout from './ui/Layout'
-import SideView from './ui/SideView'
-import FiveDays from '../components/FiveDays'
-import CurrentWeather from '../components/CurrentWeather'
-import CurrentTemperature from '../components/CurrentTemperature'
-import CitySearch from '../components/CitySearch'
+import Layout from '../ui/Layout'
+import SideView from '../ui/SideView'
+import FiveDays from './FiveDays'
+import CurrentWeather from './CurrentWeather'
+import CurrentTemperature from '../shared/CurrentTemperature'
+import CitySearch from './CitySearch'
 
 
 
@@ -20,7 +20,7 @@ function Home({cityKey}) {
         <>
 
 
-            {/* <Button variant="contained">get city</Button> */}
+           
             <Layout >
                 <SideView>
                     <CitySearch />

@@ -1,10 +1,10 @@
 import React, { useEffect } from 'react'
 import FavouriteCard from './FavouriteCard'
-import Layout from './ui/Layout'
-import SideView from './ui/SideView'
+import Layout from '../ui/Layout'
+import SideView from '../ui/SideView'
 import { connect } from 'react-redux'
-import CurrentTemperature from './CurrentTemperature'
-import NoFavorites from './ui/NoFavorites'
+import CurrentTemperature from '../shared/CurrentTemperature'
+import NoFavorites from '../ui/NoFavorites'
 
 function Favourites({ favorites, cityKey }) {
 

@@ -1,10 +1,10 @@
 import React from 'react'
 import { useHistory } from 'react-router-dom'
 import { connect } from 'react-redux'
-import { removeCityFromFavorites } from '../redux/favorites/favorites.actions'
-import { fetchCurrentWeatherStartAsync } from '../redux/weather/weather.actions'
-import  { ReactComponent as DeleteIcon } from '../assets/icons/delete.svg'
-import  { ReactComponent as TempIcon } from '../assets/icons/temp.svg'
+import { removeCityFromFavorites } from '../../redux/favorites/favorites.actions'
+import { fetchCurrentWeatherStartAsync } from '../../redux/weather/weather.actions'
+import  { ReactComponent as DeleteIcon } from '../../assets/icons/delete.svg'
+import  { ReactComponent as TempIcon } from '../../assets/icons/temp.svg'
 
 
 

@@ -1,8 +1,8 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { fetchForecastStartAsync } from '../redux/weather/weather.actions'
-import DayCard from '../components/DayCard'
-import Loader from './ui/Loader'
+import { fetchForecastStartAsync } from '../../redux/weather/weather.actions'
+import DayCard from './DayCard'
+import Loader from '../ui/Loader'
 
 
 function FiveDays({ fiveDayForecast, cityKey , fetchForecastStartAsync, isLoading}) {

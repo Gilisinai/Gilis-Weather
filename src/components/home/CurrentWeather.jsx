@@ -1,12 +1,12 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { setCurrentWeather, fetchCurrentWeatherStartAsync } from '../redux/weather/weather.actions'
-import { addCityToFavorites } from '../redux/favorites/favorites.actions'
-import { checkIfInFavorite } from '../redux/weather/weather.actions'
+import { setCurrentWeather, fetchCurrentWeatherStartAsync } from '../../redux/weather/weather.actions'
+import { addCityToFavorites } from '../../redux/favorites/favorites.actions'
+import { checkIfInFavorite } from '../../redux/weather/weather.actions'
 
-import Loader from './ui/Loader'
-import RequestError from './ui/RequestError'
-import Like from './ui/Like'
+import Loader from '../ui/Loader'
+import RequestError from '../ui/RequestError'
+import Like from '../ui/Like'
 
 import dayjs from 'dayjs'
 

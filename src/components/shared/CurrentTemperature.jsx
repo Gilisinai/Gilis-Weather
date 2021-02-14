@@ -1,7 +1,7 @@
 import React from 'react'
 import { connect } from 'react-redux'
 import WeatherIcon from './WeatherIcon'
-import Loader from './ui/Loader'
+import Loader from '../ui/Loader'
 
 
 function CurrentTemperature({temperature, isLoading, description, icon }) {

@@ -1,9 +1,9 @@
 import React, {useEffect} from 'react'
 import { Switch, Route } from 'react-router-dom'
-import Home from './components/Home'
+import Home from './components/home/Home'
 import {connect} from 'react-redux'
 import {fetchCurrentWeatherStartAsync} from './redux/weather/weather.actions'
-import Favourites from './components/Favourites';
+import Favourites from './components/favorites/Favourites';
 import './App.scss';
 
 function App({fetchCurrentWeatherStartAsync}) {

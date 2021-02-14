@@ -15,14 +15,19 @@
     }
 
     @include respond(lg) {
-        padding-top: 10rem;
-    }
-
-    @include respond(md) {
         height: unset;
         padding-left: 4rem;
         padding-top: 4rem;
         margin-left: unset;
         min-width: 50%
+    }
+
+    @include respond(xs) {
+        width: 100vw;
+        min-width: unset;
+        margin-bottom: 10rem;
+        padding-left: 1rem;
+        min-height: 37%;
+        overflow-y: auto;
     }
 }

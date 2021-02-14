@@ -14,7 +14,7 @@ function CurrentTemperature({temperature, isLoading, description}) {
                     <WeatherIcon className="temperature__details-icon" iconCode={21} />
                 </div>
                 <div className="temperature__details">
-                    <h1 className="temperature-h--3">{temperature}&#8451;</h1> 
+                    <h1 className="temperature-h--3">{temperature}&#176;</h1> 
                     <h1 className="temperature-h--1">{description}</h1> 
 
                 </div>

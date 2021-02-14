@@ -7,6 +7,28 @@
     margin-top: 2rem;
     margin: 0 auto;
 
+    @include respond(xs) {
+        flex-direction: row;
+        min-height: unset;
+    }
+
+    &__mobile {
+        display: none;
+
+        @include respond(xs) {
+            display: block;
+            min-width: 4rem;
+        }
+    }
+
+    &__desktop {
+        display: block;
+
+        @include respond(xs) {
+            display: none;
+        }
+    }
+
     &__card {
         max-width: 80%;
         margin-bottom: 2rem;
@@ -20,6 +42,11 @@
         padding: 1rem;
         padding-left: 0;
 
+        @include respond(xs) {
+            flex-direction: column;
+            padding: unset;
+        }
+
         &:hover {
             border: 1px solid #fff;
         }
@@ -29,6 +56,14 @@
             display: flex;
             justify-content: center;
             font-family: $font-1;
+
+            @include respond(xs) {
+                width: unset;
+            }
+
+            & img {
+                min-width: 8rem
+            }
 
             &--temp {
                 display: flex;

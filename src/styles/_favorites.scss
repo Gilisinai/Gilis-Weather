@@ -5,6 +5,15 @@
         border: 1px solid #fff;
         width: 70%;
         justify-content: space-between;
+        margin-bottom: 2rem;
+
+        @include respond(md) {
+            width: 90%;
+        }
+
+        @include respond(xs) {
+            min-height: 9rem;
+        }
 
         &:hover {
             border: 1px solid #fff;
@@ -14,6 +23,10 @@
             color: $text-color-light;
             font-weight: $fw-light;
             padding: 2rem;
+
+            @include respond(xs) {
+                padding: 1rem;
+            }
         }
 
     }
@@ -28,6 +41,10 @@
         background-color: #fff;
         transition: $transition-time;
 
+        @include respond(md) {
+            min-width: 10rem;
+        }
+
         &:hover {
             background-color: transparent;
 
@@ -39,11 +56,22 @@
         &:first-of-type {
             border-bottom-color: $color-2;
             border-top-right-radius: $border-radius;
+
+            @include respond(xs) {
+                border-right-color: $color-2;
+                border-bottom-color: #fff;
+                border-top-right-radius: unset;
+            }
         }
 
         &:last-of-type {
             border-top-color: $color-2;
             border-bottom-right-radius: $border-radius;
+
+            @include respond(xs) {
+                border-top-color: #fff;
+                border-top-right-radius: $border-radius;
+            }
         }
 
         & svg path:last-of-type {
@@ -53,6 +81,10 @@
         &-wrapper {
             display: flex;
             flex-direction: column;
+
+            @include respond(xs) {
+                flex-direction: row;
+            }
         }
     }
 

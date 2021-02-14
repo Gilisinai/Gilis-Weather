@@ -4,6 +4,20 @@
     max-width: 75%;
     width: 75%;
 
+    @include respond(lg) {
+        margin-bottom: 7rem;
+        margin-top: 7rem;
+    }
+
+    @include respond(xs) {
+        margin-bottom: 2rem;
+        margin-top: 2rem;
+        padding-left: 2rem;
+        max-width: unset;
+        width: 90%;
+        margin-bottom: 4rem;
+    }
+
     & input {
         background: transparent;
         color: $text-color-light;

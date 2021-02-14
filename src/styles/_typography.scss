@@ -61,6 +61,10 @@
     @include respond(lg) {
       font-size: $ipro-headline--1;
     }
+
+    @include respond(md) {
+      font-size: $ip-headline--1;
+    }
   
     @include respond(xs) {
       font-size: $mob-headline--1;
@@ -81,6 +85,10 @@
     @include respond(lg) {
       font-size: $ipro-headline--2;
     }
+
+    @include respond(md) {
+      font-size: $ip-headline--2;
+    }
   
     @include respond(xs) {
       font-size: $mob-headline--2;
@@ -100,6 +108,10 @@
   
     @include respond(lg) {
       font-size: $ipro-headline--3;
+    }
+
+    @include respond(md) {
+      font-size: $ip-headline--3;
     }
   
     @include respond(xs) {

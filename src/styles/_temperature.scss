@@ -3,13 +3,36 @@
     padding-left: 10rem;
     display: flex;
 
-    @include respond(md) {
-        padding-left: 4rem;
+    @include respond(lg) {
+        padding-left: unset;
+        margin-top: unset;
+        align-items: center;
+        flex-direction: column;
+        justify-content: center;
+        min-width: 50%;
+    }
+
+    @include respond(xs) {
+        min-height: 50%;
     }
 
     &__details {
         & img {
             min-width: 15rem;
+
+            @include respond(lg) {
+                min-width: 35rem;
+            }
+
+            @include respond(xs) {
+                min-width: 17rem;
+            }
+        }
+    }
+
+    &-h--1 {
+        @include respond(xs) {
+            text-align: center;
         }
     }
 }

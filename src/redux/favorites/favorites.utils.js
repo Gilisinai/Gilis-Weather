@@ -21,3 +21,5 @@ export const removeCityFromfavorites = (favorites, cityToRemove) => {
 
     return [...favorites]
  }
+
+ 

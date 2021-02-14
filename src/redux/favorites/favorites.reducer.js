@@ -2,7 +2,7 @@ import { FavoritesActionTypes } from './favorites.types'
 import { addCityTofavorites, removeCityFromfavorites } from './favorites.utils'
 
 const initialState = {
-    favorites: []
+    favorites: [],
 }
 
 const favoritesReducer = (state = initialState, action) => {

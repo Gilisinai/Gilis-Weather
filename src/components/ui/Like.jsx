@@ -1,12 +1,18 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import Lottie from 'react-lottie'
 import animationData from '../../assets/animations/like.json'
+import { connect } from 'react-redux'
 
-function Like() {
+function Like({cityKey, favorites}) {
+
+    useEffect(() => {
+       console.log(cityKey)
+       console.log(favorites)
+    })
 
     const defaultOptions = {
         loop: false,
-        autoplay: false,
+        autoplay: favorites.find(favorite => favorite.Key === cityKey),
         animationData: animationData,
         rendererSettings: {
             preserveAspectRatio: 'xMidYMid slice'
@@ -22,4 +28,9 @@ function Like() {
     )
 }
 
-export default Like
+const MapStateToProps = state => ({
+    cityKey: state.weather.cityKey,
+    favorites: state.favorites.favorites
+})
+
+export default connect(MapStateToProps)(Like)

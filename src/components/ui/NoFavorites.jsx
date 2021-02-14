@@ -14,13 +14,13 @@ function NoFavorites() {
     }
 
     return (
-       <div class="error">
+       <div className="error">
             <Lottie
                 options={defaultOptions}
                 height={300}
                 width={300}
             />
-            <h1 class="error-h--2">You have no favorites ... yet.. </h1>
+            <h1 className="error-h--2">You have no favorites ... yet.. </h1>
         </div>
     )
 }

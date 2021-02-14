@@ -1,7 +1,9 @@
 import { WeatherActionTypes } from './weather.types'
+import { checkIfInFavorite } from './weather.utils'
 
 const initialState = {
     cityKey: null,
+    currentInFavorite: false,
     currentWeather: null,
     fiveDayForecast: null,
     isFetchingCurrent: false,
@@ -10,7 +12,7 @@ const initialState = {
 }
 
 const weatherReducer = (state = initialState, action) => {
-    switch(action.type) {
+    switch (action.type) {
         case WeatherActionTypes.SET_CURRENT_WEATHER:
             return {
                 ...state,
@@ -31,7 +33,6 @@ const weatherReducer = (state = initialState, action) => {
                 ...state,
                 isFetchingCurrent: true
             }
-
         case WeatherActionTypes.FETCH_CURRENT_WEATHER_SUCCESS:
             return {
                 ...state,
@@ -39,7 +40,6 @@ const weatherReducer = (state = initialState, action) => {
                 cityKey: action.payload.Key,
                 currentWeather: action.payload
             }
-
         case WeatherActionTypes.FETCH_CURRENT_WEATHER_FAILURE:
             return {
                 ...state,
@@ -65,7 +65,11 @@ const weatherReducer = (state = initialState, action) => {
                 isFetchingForecast: false,
                 errorMessage: action.payload
             }
-
+        // case WeatherActionTypes.CHECK_IF_FAVORITE:
+        //     return {
+        //         ...state,
+        //         currentInFavorite: checkIfInFavorite(state.favorites, action.payload)
+        //     }
         default:
             return state;
     }

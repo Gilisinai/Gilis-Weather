@@ -9,7 +9,7 @@ import  { ReactComponent as TempIcon } from '../assets/icons/temp.svg'
 
 
 function FavouriteCard({ data, removeCityFromFavorites, fetchCurrentWeatherStartAsync }) {
-    const { LocalizedName , Country } = data
+    const { LocalizedName , Country, Temperature } = data
     const history = useHistory()
 
     const viewFavoriteWeather = (LocalizedName) => {
@@ -22,6 +22,8 @@ function FavouriteCard({ data, removeCityFromFavorites, fetchCurrentWeatherStart
             
             <div className="favorite__card-item">
                 <h1 className="favorite__card-ah--1" >  {LocalizedName}, {Country.LocalizedName} </h1>
+                <h1 className="favorite__card-ah--1" >  {Temperature.Metric.Value}&#176; </h1>
+
             </div>
             <div className="favorite__btn-wrapper">
 

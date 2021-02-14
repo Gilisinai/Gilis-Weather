@@ -11,6 +11,11 @@ export const setFiveDayForecast = fiveDayForecast => ({
     payload: fiveDayForecast
 })
 
+export const checkIfInFavorite = (city) => ({
+    type: WeatherActionTypes.CHECK_IF_FAVORITE,
+    payload: city
+})
+
 export const fetchCurrentWeatherStart = () => ({
     type: WeatherActionTypes.FETCH_CURRENT_WEATHER_START
 })

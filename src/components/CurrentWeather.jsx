@@ -13,7 +13,7 @@ function CurrentWeather({ addCityToFavorites,fetchCurrentWeatherStartAsync, curr
 
     useEffect(() => {
         
-        fetchCurrentWeatherStartAsync()
+        // fetchCurrentWeatherStartAsync()
     }, [])
 
     return (

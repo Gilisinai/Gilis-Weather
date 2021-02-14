@@ -23,10 +23,8 @@ function FavouriteCard({ data, removeCityFromFavorites, fetchCurrentWeatherStart
             <div className="favorite__card-item">
                 <h1 className="favorite__card-ah--1" >  {LocalizedName}, {Country.LocalizedName} </h1>
                 <h1 className="favorite__card-ah--1" >  {Temperature.Metric.Value}&#176; </h1>
-
             </div>
             <div className="favorite__btn-wrapper">
-
                 <button className="favorite__btn" onClick={()=> viewFavoriteWeather(LocalizedName)}><TempIcon /></button>
                 <button className="favorite__btn" onClick={() => removeCityFromFavorites(data)}><DeleteIcon /></button>
             </div>
@@ -38,6 +36,5 @@ const mapDispatchToProps = dispatch => ({
     removeCityFromFavorites: city => dispatch(removeCityFromFavorites(city)),
     fetchCurrentWeatherStartAsync: city => dispatch(fetchCurrentWeatherStartAsync(city))
 })
-
 
 export default connect(null, mapDispatchToProps)(FavouriteCard)

@@ -13,26 +13,10 @@ import dayjs from 'dayjs'
 
 function CurrentWeather({ addCityToFavorites, currentWeather, isLoading, error, cityKey }) {
 
-    // useEffect(() => {
-    //     const existInFavorites = favorites.find(
-    //         favorite => favorite.Key === currentWeather.Key
-    //     )
-
-    //     if(existInFavorites) {
-    //         console.log('exist in favorites')
-    //     }
-
-    //     console.log('not exist in favorites')
-
-    // })
     return (
-
-
         <section className="current">
             {isLoading ? <Loader /> :
-
                 error ? <RequestError /> :
-
                     <div className="current__weather">
                         <div className="current__weather-details">
                             <div>
@@ -43,21 +27,15 @@ function CurrentWeather({ addCityToFavorites, currentWeather, isLoading, error, 
                                     {currentWeather && dayjs(currentWeather.LocalObservationDateTime).format('MMMM D, YYYY h:mm A')}
                                 </div>
                             </div>
-
                         </div>
-
                         <div className="current__weather-utils">
                             <div onClick={() => addCityToFavorites(currentWeather)} className="current__weather-utils--icon">
                                 <Like />
                             </div>
-
                         </div>
                     </div>
             }
         </section>
-
-
-
     )
 }
 
@@ -75,7 +53,5 @@ const mapDispatchToProps = dispatch => ({
     fetchCurrentWeatherStartAsync: city => dispatch(fetchCurrentWeatherStartAsync(city)),
     checkIfInFavorite: city => dispatch(checkIfInFavorite(city))
 })
-
-
 
 export default connect(mapStateToProps, mapDispatchToProps)(CurrentWeather)

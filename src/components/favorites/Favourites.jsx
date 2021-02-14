@@ -17,8 +17,7 @@ function Favourites({ favorites, cityKey }) {
                 {favorites.length === 0 ? <NoFavorites /> :
                     <>
                         <h1 className="favorite-h--1">My Favorite Cities</h1>
-                        {favorites.map((day, index) => (
-
+                        {favorites.map((day) => (
                             <FavouriteCard key={day.Key} data={day} />
                         ))}
                     </>
@@ -33,7 +32,5 @@ const mapStateToProps = state => ({
     favorites: state.favorites.favorites,
     cityKey: state.weather.cityKey
 })
-
-
 
 export default connect(mapStateToProps)(Favourites)

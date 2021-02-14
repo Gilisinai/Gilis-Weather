@@ -6,7 +6,6 @@ import  { ReactComponent as SearchIcon } from '../../assets/icons/search.svg'
 
 function CitySearch({ fetchAutocompleteStartAsync, options, searchQuery, fetchCurrentWeatherStartAsync, checkVaildInput, isMatch }) {
 
-
     const handleSearch = (e) => {
         fetchAutocompleteStartAsync(e.target.value)
         checkVaildInput(e.target.value)
@@ -25,7 +24,6 @@ function CitySearch({ fetchAutocompleteStartAsync, options, searchQuery, fetchCu
         </div>
     )
 }
-
 
 const mapStateToProps = state => ({
     options: state.autocomplete.options,

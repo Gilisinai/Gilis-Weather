@@ -5,11 +5,6 @@ import { connect } from 'react-redux'
 
 function Like({cityKey, favorites}) {
 
-    useEffect(() => {
-       console.log(cityKey)
-       console.log(favorites)
-    })
-
     const defaultOptions = {
         loop: false,
         autoplay: favorites.find(favorite => favorite.Key === cityKey),

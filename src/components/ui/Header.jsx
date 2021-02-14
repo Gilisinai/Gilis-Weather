@@ -6,10 +6,7 @@ import { ReactComponent as HeartIcon } from '../../assets/icons/heart.svg'
 import { toggleDarkMode } from '../../redux/ui/ui.actions'
 import Toggler from './Toggler'
 
-
-
 function Header({darkMode, toggleDarkMode}) {
-
 
     return (
 
@@ -28,16 +25,10 @@ function Header({darkMode, toggleDarkMode}) {
                     </Link>
                 </div>
                 <div className="navbar__menu-item" onClick={() =>toggleDarkMode(darkMode)}>
-
                     <Toggler />
-
                 </div>
             </div>
         </div>
-
-
-
-
     )
 }
 

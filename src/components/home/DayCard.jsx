@@ -13,13 +13,9 @@ function DayCard({ data }) {
                 <h1> {dayjs(Date).format('ddd')} </h1>
             </div>
             <div className="forecast__card-item forecast__card-item--temp">
-
-
                 <p className="forecast__mobile forecast-p--2">
                 {Temperature.Minimum.Value}&#176; -{Temperature.Maximum.Value}&#176;
                 </p>
-                
-                
                 <p className="forecast__desktop forecast-p--2">
                     {Temperature.Minimum.Value}&#176; - {Temperature.Maximum.Value}&#176;
                 </p>

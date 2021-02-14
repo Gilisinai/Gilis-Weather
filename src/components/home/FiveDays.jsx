@@ -4,14 +4,12 @@ import { fetchForecastStartAsync } from '../../redux/weather/weather.actions'
 import DayCard from './DayCard'
 import Loader from '../ui/Loader'
 
-
 function FiveDays({ fiveDayForecast, cityKey , fetchForecastStartAsync, isLoading}) {
 
     useEffect(() => {
         fetchForecastStartAsync(cityKey)
 
     }, [cityKey])
-
 
     return (
         <div className="forecast">

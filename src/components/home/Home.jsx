@@ -7,15 +7,8 @@ import CurrentWeather from './CurrentWeather'
 import CurrentTemperature from '../shared/CurrentTemperature'
 import CitySearch from './CitySearch'
 
-
-
 function Home({cityKey}) {
     
-    useEffect(() => {
-
-    }, [])
-
-
     return (
         <>
 
@@ -37,6 +30,5 @@ function Home({cityKey}) {
 const mapStateToProps = state => ({
     cityKey: state.weather.cityKey
 })
-
 
 export default connect(mapStateToProps)(Home)

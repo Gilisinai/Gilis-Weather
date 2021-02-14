@@ -10,7 +10,7 @@ function Favourites({ favorites, cityKey }) {
 
     useEffect(() => {
         console.log(favorites)
-    }, [])
+    })
     return (
         <Layout>
             <SideView>

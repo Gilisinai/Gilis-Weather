@@ -3,7 +3,6 @@ import { connect } from 'react-redux'
 import { setCurrentWeather , fetchCurrentWeatherStartAsync } from '../redux/weather/weather.actions'
 import { addCityToFavorites } from '../redux/favorites/favorites.actions'
 
-import  { ReactComponent as HeartIcon } from '../assets/icons/heart.svg'
 import Loader from './ui/Loader'
 import RequestError from './ui/RequestError'
 import Like from './ui/Like'

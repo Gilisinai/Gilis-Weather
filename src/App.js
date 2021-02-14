@@ -11,7 +11,7 @@ function App({fetchCurrentWeatherStartAsync}) {
  useEffect(() => {
   fetchCurrentWeatherStartAsync()
    
- }, [])
+ })
   return (
     <>
 

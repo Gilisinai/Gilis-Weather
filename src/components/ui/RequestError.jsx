@@ -14,13 +14,13 @@ function RequestError() {
     }
 
     return (
-        <div class="error">
+        <div className="error">
             <Lottie
                 options={defaultOptions}
                 height={300}
                 width={300}
             />
-            <h1 class="error-h--2">Sorry , too many requests for today... </h1>
+            <h1 className="error-h--2">Sorry , too many requests for today... </h1>
         </div>
     )
 }

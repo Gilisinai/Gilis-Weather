@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react'
 import { connect } from 'react-redux'
-import { setFiveDayForecast, fetchForecastStartAsync } from '../redux/weather/weather.actions'
+import { fetchForecastStartAsync } from '../redux/weather/weather.actions'
 import DayCard from '../components/DayCard'
 import Loader from './ui/Loader'
 
@@ -31,7 +31,6 @@ const mapStateToProps = state => ({
 })
 
 const mapDispatchToProps = dispatch => ({
-    setFiveDayForecast: fiveDayForecast => dispatch(setFiveDayForecast(fiveDayForecast)),
     fetchForecastStartAsync: (locationKey) => dispatch(fetchForecastStartAsync(locationKey))
 })
 

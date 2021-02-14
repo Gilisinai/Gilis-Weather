@@ -4,6 +4,7 @@ import Layout from './ui/Layout'
 import SideView from './ui/SideView'
 import { connect } from 'react-redux'
 import CurrentTemperature from './CurrentTemperature'
+import NoFavorites from './ui/NoFavorites'
 
 function Favourites({ favorites, cityKey }) {
 
@@ -13,12 +14,15 @@ function Favourites({ favorites, cityKey }) {
     return (
         <Layout>
             <SideView>
-                <h1 className="favorite-h--1">My Favorite Cities</h1>
-                {favorites.length === 0 ? <div>no favourites yet</div> : 
-                     favorites.map((day, index) => (
-                         
-                         <FavouriteCard key={day.Key} data={day} />
-                     ))}
+                {favorites.length === 0 ? <NoFavorites /> :
+                    <>
+                        <h1 className="favorite-h--1">My Favorite Cities</h1>
+                        {favorites.map((day, index) => (
+
+                            <FavouriteCard key={day.Key} data={day} />
+                        ))}
+                    </>
+                }
             </SideView>
             {cityKey && <CurrentTemperature />}
         </Layout>

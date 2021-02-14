@@ -18,7 +18,7 @@ function CitySearch({ fetchAutocompleteStartAsync, options, searchQuery, fetchCu
             <datalist id="autocomplete">
                 {options.length > 0 ?
                     options.map((option) => (
-                        <option key={option.Key} disabled>{option.LocalizedName}</option>
+                        <option key={option.Key}>{option.LocalizedName}</option>
                     )) : <option>no options </option>}
             </datalist>
             <button className='search__btn' onClick={() => fetchCurrentWeatherStartAsync(searchQuery)} disabled={!isMatch} ><SearchIcon /></button>

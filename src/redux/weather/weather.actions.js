@@ -69,7 +69,6 @@ export const fetchForecastStartAsync = (locationKey) => {
             const forecastUrl = `http://dataservice.accuweather.com/forecasts/v1/daily/5day/${locationKey}?apikey=${key}`
             const forecastRes = await fetch(forecastUrl)
             const forecastData = await forecastRes.json()
-            console.log(forecastData)
             dispatch(fetchForcastSuccess([...forecastData.DailyForecasts]))     
         } catch(error) {
             dispatch(fetchForcastFailure(error.message))

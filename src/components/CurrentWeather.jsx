@@ -3,10 +3,12 @@ import { connect } from 'react-redux'
 import { setCurrentWeather , fetchCurrentWeatherStartAsync } from '../redux/weather/weather.actions'
 import { addCityToFavorites } from '../redux/favorites/favorites.actions'
 
+import Loader from './ui/Loader'
+
 import dayjs from 'dayjs'
 
 
-function CurrentWeather({ addCityToFavorites, currentWeather, fetchCurrentWeatherStartAsync }) {
+function CurrentWeather({ addCityToFavorites,fetchCurrentWeatherStartAsync, currentWeather, isLoading }) {
 
     useEffect(() => {
         
@@ -17,6 +19,8 @@ function CurrentWeather({ addCityToFavorites, currentWeather, fetchCurrentWeathe
 
 
         <section className="current">
+            {isLoading ? <Loader /> : 
+            
             <div className="current__weather">
                 <div className="current__weather-details">
                     <div>
@@ -37,6 +41,7 @@ function CurrentWeather({ addCityToFavorites, currentWeather, fetchCurrentWeathe
 
                 </div>
             </div>   
+            }
         </section>
 
 
@@ -45,7 +50,8 @@ function CurrentWeather({ addCityToFavorites, currentWeather, fetchCurrentWeathe
 }
 
 const mapStateToProps = state => ({
-    currentWeather: state.weather.currentWeather
+    currentWeather: state.weather.currentWeather,
+    isLoading: state.weather.isFetchingCurrent
 })
 
 const mapDispatchToProps = dispatch => ({

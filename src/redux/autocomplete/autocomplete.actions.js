@@ -20,6 +20,11 @@ export const fetchSearchQuery = searchQuery => ({
     payload: searchQuery 
 })
 
+export const checkVaildInput = searchQuery => ({
+    type: AutocompleteActionTypes.CHECK_MATCH_INPUT,
+    payload: searchQuery 
+})
+
 export const fetchAutocompleteStartAsync = (searchQuery) => {
     return async dispatch => {
         try {

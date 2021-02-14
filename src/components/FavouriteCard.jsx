@@ -1,5 +1,6 @@
 import React from 'react'
 import WeatherIcon from './WeatherIcon'
+import { useHistory } from 'react-router-dom'
 import { connect } from 'react-redux'
 import { removeCityFromFavorites } from '../redux/favorites/favorites.actions'
 import { fetchCurrentWeatherStartAsync } from '../redux/weather/weather.actions'
@@ -7,8 +8,15 @@ import { fetchCurrentWeatherStartAsync } from '../redux/weather/weather.actions'
 
 function FavouriteCard({ data, removeCityFromFavorites, fetchCurrentWeatherStartAsync }) {
     const { Temperature, WeatherText, Date, LocalizedName } = data
+    const history = useHistory()
+
+    const viewFavoriteWeather = (LocalizedName) => {
+        fetchCurrentWeatherStartAsync(LocalizedName)
+        history.push('/')
+    }
+
     return (
-        <div className="favorite__card" onClick={()=> fetchCurrentWeatherStartAsync(LocalizedName)}>
+        <div className="favorite__card" onClick={()=> viewFavoriteWeather(LocalizedName)}>
             <div className="favorite__card-item">
                 <WeatherIcon iconCode={21} />
             </div>

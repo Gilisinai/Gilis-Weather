@@ -38,10 +38,15 @@
         &-item {
             
             margin-bottom: 4rem;
+            max-width: 10rem;
 
             @include respond(lg) {
                 min-width: 6rem;
                 margin-bottom: unset;
+            }
+
+            @include respond(xs) {
+                max-width: 5rem;
             }
 
             & a {

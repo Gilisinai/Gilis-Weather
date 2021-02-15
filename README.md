@@ -8,8 +8,8 @@ Weather app is an easy to use app that allows us to search for the weather in a 
 - [Weather App](#Weather-app)
   - [Screenshots](#screenshots)
     - [Weather Screen](#first-screen)
-    - [favorites](#favorites)
-    - [responsive](#responsive)
+    - [Favorites](#favorites)
+    - [Responsive](#responsive)
     - [Dark Mode](#Dark-Mode)
   - [Techstack](#tech-stack)
   - [TODO](#todo)
@@ -24,13 +24,13 @@ When the user opens the app for the fist time, by default he gets weather inform
 
 <p align="center"><img src="src/assets/screenshots/light_mob.png" width="200" /></p>
 
-### favorites
+### Favorites
 
 A user can click on the start next to the city and add it to the favorites
 
 <p align="center"><img src="src/assets/screenshots/light_mob.png" width="200" /></p>
 
-### responsive
+### Responsive
 
 We can find this app responsive across all of the relevant platforms (desktop, laptop , ipad pro, ipad & mobile)
 

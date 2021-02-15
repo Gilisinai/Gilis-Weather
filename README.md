@@ -1,6 +1,6 @@
 # Weather App
 
-Weather app is an easy to use app that aloow us to searce for the weather in a specific city, and add to favorites.
+Weather app is an easy to use app that allows us to search for the weather in a specific city, and add to favorites.
 
 
 # Table Of Contents
